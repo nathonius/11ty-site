@@ -16,4 +16,4 @@ permalink: /blog/index.html
 
 {{ post.page.date.toLocaleDateString() }}
 
-{% endfor%}
+{% endfor %}

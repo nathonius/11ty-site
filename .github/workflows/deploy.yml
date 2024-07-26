@@ -2,8 +2,6 @@ name: Deploy
 on:
   - workflow_call
   - workflow_dispatch
-env:
-  site_dir: Projects/Website/Site
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -12,15 +10,7 @@ jobs:
       deployments: write
     steps:
       - uses: actions/setup-node@v4
-      - uses: actions/checkout@v4 # Checkout 11ty-site
-      - uses: actions/checkout@v4 # Checkout notes (private repo)
-        with:
-          repository: nathonius/notes
-          ssh-key: ${{ secrets.NOTES_SSH_KEY }}
-          sparse-checkout: ${{ env.site_dir }}
-          path: content/
-      - name: Copy Content
-        run: cp -r content/${{ env.site_dir}}/* src/
+      - uses: actions/checkout@v4
       - name: Build
         run: |
           npm install
