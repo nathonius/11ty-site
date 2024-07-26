@@ -1,0 +1,53 @@
+body {
+  /* Approximate width of the h1-h6 marker */
+  --marker-width: -34px;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    position: relative;
+  }
+
+  h1::before,
+  h2::before,
+  h3::before,
+  h4::before,
+  h5::before,
+  h6::before {
+    opacity: 0.2;
+    font-size: 0.8em;
+    font-weight: 400;
+    position: absolute;
+    visibility: visible;
+    vertical-align: middle;
+    left: var(--marker-width);
+  }
+
+  h1::before {
+    content: "h1";
+    line-height: calc(var(--line-height) / 0.8);
+  }
+  h2::before {
+    content: "h2";
+    line-height: calc(var(--line-height) / 0.8);
+  }
+  h3::before {
+    content: "h3";
+    line-height: calc(var(--line-height) / 0.8);
+  }
+  h4::before {
+    content: "h4";
+    line-height: calc(var(--line-height) / 0.8);
+  }
+  h5::before {
+    content: "h5";
+    line-height: calc(var(--line-height) / 0.8);
+  }
+  h6::before {
+    content: "h6";
+    line-height: calc(var(--line-height) / 0.8);
+  }
+}

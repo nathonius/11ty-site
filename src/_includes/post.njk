@@ -1,0 +1,13 @@
+{%- extends "home.njk" -%}
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="/blog.css" />
+{% endblock %}
+{% block sitecontent %}
+<h1>{{ title }}</h1>
+{{ content | safe }}
+{% endblock %}
+{% block postscripts %}
+{{ super() }}
+<script type="module" src="/modules/copy-code.js"></script>
+{% endblock %}

@@ -1,0 +1,85 @@
+:root,
+html[data-theme="dark"] {
+  /* Alloy Palette */
+  --surface-1: #1f1f1f;
+  --surface-2: #292929;
+  --red: #f95793;
+  --magenta: #ceb5ff;
+  --cyan: #97e0ef;
+  --blue: #b3cfff;
+  --green: #b5e25a;
+  --orange: #fcac50;
+  --yellow: #e2e25a;
+  --tan: #e5dea0;
+  --error: #f47777;
+  --text: white;
+  --primary: var(--green);
+  --secondary: var(--red);
+  --font-sans-serif: -apple-system, BlinkMacSystemFont, avenir next, avenir,
+    segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial,
+    sans-serif;
+  --font-serif: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman,
+    Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji,
+    Segoe UI Emoji, Segoe UI Symbol;
+  --font-mono: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
+    monospace;
+
+  /* Other vars */
+  --space-xs: 0.25rem;
+  --space-s: 0.5rem;
+  --space-m: 1rem;
+  --icon-m: 1rem;
+}
+html[data-theme="light"] {
+  --surface-1: #f1f1f1;
+  --surface-2: white;
+  --text: #1f1f1f;
+  --primary: #3a5b94;
+  a {
+    font-weight: 600;
+  }
+}
+
+/* Box sizing */
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: var(--surface-1);
+  color: var(--text);
+  font-family: var(--font-sans-serif);
+  font-size: 1.125rem;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s;
+  &:hover,
+  &:focus {
+    color: var(--secondary);
+    text-decoration: underline;
+  }
+}
+
+/* Default button styling */
+button {
+  border: 2px solid transparent;
+  background-color: color-mix(in srgb, var(--text) 10%, transparent);
+  color: var(--text);
+  padding: 0.5em;
+  cursor: pointer;
+  transition: background-color 0.2s, border 0.2s;
+  &:hover,
+  &:focus {
+    background-color: color-mix(in srgb, var(--text) 20%, transparent);
+    border: 2px solid color-mix(in srgb, var(--text) 50%, transparent);
+  }
+}

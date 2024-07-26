@@ -1,0 +1,32 @@
+{%- extends "base.njk" -%}
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="/home.css" />
+{% endblock %}
+{% block content %}
+<div class="home-wrapper">
+  <nav class="site-nav">
+    <ul>
+      <li><a id="nav-home" href="index.md">Home</a></li>
+      <li><a id="nav-blog" href="/blog/blog.md">Blog</a></li>
+      <li><a id="nav-projects" href="/projects/projects.md">Projects</a></li>
+      <li><a id="nav-contact" href="contact.md">Contact</a></li>
+    </ul>
+    <button id="theme-toggle" type="button" aria-label="Toggle theme">
+      <span id="theme-emoji" aria-label="switch to light mode" role="img"
+        >🌙</span
+      >
+    </button>
+  </nav>
+  <main class="site-content">
+    {% block sitecontent %}
+    {{ content | safe }}
+    {% endblock %}
+  </main>
+</div>
+{% endblock %}
+{% block postscripts %}
+{{ super() }}
+<script type="module" src="/modules/active-route.js"></script>
+<script type="module" src="/modules/theme-toggle.js"></script>
+{% endblock %}
