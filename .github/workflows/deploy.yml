@@ -1,0 +1,35 @@
+name: Deploy
+on:
+  - workflow_call
+  - workflow_dispatch
+env:
+  site_dir: Projects/Website/Site
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    steps:
+      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v4 # Checkout 11ty-site
+      - uses: actions/checkout@v4 # Checkout notes (private repo)
+        with:
+          repository: nathonius/notes
+          ssh-key: ${{ secrets.NOTES_SSH_KEY }}
+          sparse-checkout: ${{ env.site_dir }}
+          path: content/
+      - name: Copy Content
+        run: cp -r content/${{ env.site_dir}}/* src/
+      - name: Build
+        run: |
+          npm install
+          npm run build
+      - name: Publish
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: notes
+          directory: public/
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
