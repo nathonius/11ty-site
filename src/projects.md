@@ -1,6 +1,7 @@
 ---
 title: Projects
 layout: home.njk
+summary: All the projects worked on by Nathan Smith.
 ---
 These are some projects I have created or worked on. Some are more maintained than others, but everything is open source and freely licensed, so please feel free to steal.
 

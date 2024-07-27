@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="{{ summary }}" />
     <script>
       function getToggle() {
         return document.querySelector("button#theme-toggle");
@@ -27,7 +28,7 @@
           window.localStorage.setItem("prefers-theme", newTheme);
         }
       }
-      
+
       let theme = "dark";
       const preference = window.localStorage.getItem("prefers-theme");
       if (preference) {
@@ -40,9 +41,7 @@
       }
       setTheme(theme);
     </script>
-    {% block prescripts %}
-    {% endblock %}
-    {% block styles %}
+    {% block prescripts %} {% endblock %} {% block styles %}
     <link rel="stylesheet" href="/base.css" />
     {% endblock %}
     <title>{{ title }}</title>

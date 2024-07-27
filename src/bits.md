@@ -1,6 +1,7 @@
 ---
 title: Bits
 layout: home.njk
+summary: Code snippets, TILs, and any other quick thoughts I want to share.
 ---
 
 {% set allBits = collections['bit'] %}

@@ -1,6 +1,7 @@
 ---
 title: Home
 layout: home.njk
+summary: Homepage of Nathan Smith, full-time and hobby open source software developer.
 ---
 
 ## Hi, I'm Nathan Smith

@@ -1,6 +1,7 @@
 ---
 title: Blog
 layout: home.njk
+summary: Thoughts on tech, life, and anything else.
 ---
 
 {% set allPosts = collections['blog-post'] %}
