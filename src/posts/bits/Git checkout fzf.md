@@ -17,7 +17,7 @@ The script gathers a list of all known branches, outputs them in a nice format, 
 > [!NOTE]
 > That last command to push the command to history may not be compatible with all shells. I know it works in zsh, but cannot guarantee it works in others. I've noted in a comment that you may need to remove that line.
 
-Here's the function:
+Here's the function (or you can [see it in my zshrc](https://github.com/nathonius/dotfiles/blob/03e62024f37ce8a41dc98d02efbe3ba055103427/.zshrc#L66)):
 
 ```shell
 gch() {
