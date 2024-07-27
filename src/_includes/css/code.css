@@ -17,12 +17,15 @@ pre.shiki {
   position: relative;
   border-radius: var(--space-s);
   padding: var(--space-m);
-  overflow: auto;
+  overflow: hidden;
   width: 100%;
   code {
     /* place a padding on the inner code element so that when it overflows
     there's still spacing on the right side */
     padding-right: 1rem;
+    width: 100%;
+    overflow: auto;
+    display: block;
   }
 
   button.copy-code-button {
@@ -33,6 +36,9 @@ pre.shiki {
     position: absolute;
     right: var(--space-m);
     top: var(--space-m);
+    opacity: 0;
+    transition: opacity 0.2s;
+
     svg {
       display: none;
       width: 1em;
@@ -40,6 +46,13 @@ pre.shiki {
     }
     &.copied svg {
       display: initial;
+    }
+  }
+
+  &:hover,
+  &:focus-within {
+    button.copy-code-button {
+      opacity: 1;
     }
   }
 }
