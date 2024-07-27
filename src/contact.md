@@ -1,7 +1,6 @@
 ---
 title: Contact
 layout: home.njk
-permalink: contact.html
 ---
 
 ## Contact

@@ -1,7 +1,6 @@
 ---
-title: Projects
+title: Blog
 layout: home.njk
-permalink: /blog/index.html
 ---
 
 {% set allPosts = collections['blog-post'] %}

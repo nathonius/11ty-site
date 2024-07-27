@@ -3,6 +3,7 @@ import { transform as cssMinify } from "lightningcss";
 import { minify as htmlMinify } from "html-minifier";
 import { minify as jsMinify } from "uglify-js";
 import path from "node:path";
+import through from "through2";
 
 export function minifyPlugin(config) {
   // Minify css
@@ -19,15 +20,15 @@ export function minifyPlugin(config) {
   });
 
   // Minify js modules
-  config.addTemplateFormats("js");
-  config.addExtension("js", {
-    outputFileExtension: "js",
-    compile: (content, outputPath) => () => {
-      if (outputPath.endsWith(".11tydata.js")) {
-        return;
+  config.addPassthroughCopy("src/modules", {
+    transform: (src, _dest, _stats) => {
+      if (path.extname(src) !== ".js") {
+        return null;
       }
-      const { code } = jsMinify(content, { toplevel: true });
-      return code;
+      return through(function (chunk, _enc, done) {
+        const { code } = jsMinify(chunk.toString(), { toplevel: true });
+        done(null, code);
+      });
     },
   });
 

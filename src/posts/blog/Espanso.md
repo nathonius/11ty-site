@@ -4,7 +4,9 @@ summary: An open-source way to improve productivity.
 date: 2024-07-15
 update_date: 2024-07-19
 tags:
+  - post
   - blog-post
+permalink: "/blog/espanso/"
 ---
 [Espanso](https://espanso.org/) is a cross-platform, open-source tool for text expansion, macros, and other replacements. It's driven entirely by YAML config files, which can be shared via cloud or version control.
 

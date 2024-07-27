@@ -4,10 +4,12 @@ summary: Part one of a series on publishing a website from an Obsidian vault.
 date: 2024-07-23
 update_date: 2024-07-23
 tags:
+  - post
   - blog-post
   - 11ty-site
 series_number: 1
 series: Building a website with Eleventy and Obsidian
+permalink: "/blog/eleventy-site-setup/"
 ---
 This is part one of a series on publishing a website from an [Obsidian](https://obsidian.md/) vault using the [Obsidian Git plugin](https://github.com/Vinzent03/obsidian-git), [Eleventy](https://www.11ty.dev/), and GitHub Actions. This part explores setting up Eleventy and creating the basis of a static site, with or without Obsidian.
 

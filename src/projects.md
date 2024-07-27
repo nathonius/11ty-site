@@ -1,7 +1,6 @@
 ---
 title: Projects
 layout: home.njk
-permalink: /projects/index.html
 ---
 These are some projects I have created or worked on. Some are more maintained than others, but everything is open source and freely licensed, so please feel free to steal.
 
