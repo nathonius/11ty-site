@@ -10,6 +10,7 @@ import { minifyPlugin } from "./build/minify-plugin.js";
 import navigation from "@11ty/eleventy-navigation";
 import output from "@11ty/eleventy-plugin-directory-output";
 import { shikiPlugin } from "./build/shiki-plugin.js";
+import RedirectsPlugin from "eleventy-plugin-redirects";
 
 const plugins = [
   { plugin: navigation },
@@ -19,10 +20,12 @@ const plugins = [
   { plugin: shikiPlugin },
   { plugin: minifyPlugin },
   { plugin: draftsPlugin },
+  { plugin: RedirectsPlugin, options: { template: "netlify" } },
 ];
 
 export default defineConfig(function (config) {
   for (const { plugin, options } of plugins) {
+    // @ts-expect-error - Types are just inaccurate for this
     config.addPlugin(plugin, options);
   }
 

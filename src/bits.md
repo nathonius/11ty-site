@@ -2,6 +2,8 @@
 title: Bits
 layout: home.njk
 summary: Code snippets, TILs, and any other quick thoughts I want to share.
+aliases:
+  - /til
 ---
 
 {% set allBits = collections['bit'] %}
