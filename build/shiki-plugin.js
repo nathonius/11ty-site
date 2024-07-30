@@ -13,8 +13,20 @@ export function shikiPlugin(config) {
       },
       transformers: [
         {
-          root: function () {
+          pre: function () {
+            // Add data-lang="<lang>"
             this.pre.properties.dataLang = this.options.lang;
+
+            // Add data-file="<filename>" ; note this is probably unstable
+            const filenameMeta = this.options.meta?.__raw ?? "";
+            if (
+              filenameMeta &&
+              filenameMeta.startsWith("; ") &&
+              filenameMeta.length > 2
+            ) {
+              const filename = filenameMeta.slice(2);
+              this.pre.properties.dataFile = filename;
+            }
           },
         },
       ],

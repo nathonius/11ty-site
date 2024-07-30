@@ -29,6 +29,20 @@ pre.shiki {
     display: block;
   }
 
+  /* decorative text */
+  button.copy-code-button,
+  &[data-file]::before {
+    font-size: 0.7em;
+    background-color: transparent;
+    opacity: 0.6;
+  }
+
+  &[data-file]::before {
+    content: attr(data-file);
+    display: block;
+    margin-bottom: var(--space-s);
+  }
+
   button.copy-code-button {
     align-items: center;
     border-radius: var(--space-xs);
@@ -37,9 +51,6 @@ pre.shiki {
     position: absolute;
     right: var(--space-s);
     top: var(--space-s);
-    font-size: 0.7em;
-    background-color: transparent;
-    opacity: 0.6;
 
     svg {
       display: none;

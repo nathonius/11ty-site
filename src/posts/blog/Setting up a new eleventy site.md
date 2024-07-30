@@ -71,7 +71,7 @@ echo '# My Project' > src/index.md
 
 To begin with, lets set the source and output directories for our site. By default all source files beginning in the current directory are included, and `_site` is used as the output directory. I prefer `src` and `public`, so let's set those in `.eleventy.js`:
 
-```js
+```js ; .eleventy.js
 export default function (config) {
   return {
     dir: {
@@ -84,7 +84,7 @@ export default function (config) {
 
 We'll be using ES module syntax in this project so we also need to set `"type": "module"` in our `package.json` file. I'll also add a couple scripts to build and serve our project. The final `package.json` will look like this:
 
-```json
+```json ; package.json
 {
   "name": "my-project",
   "version": "1.0.0",
@@ -146,7 +146,7 @@ touch src/_includes/base.njk
 In `base.njk`, we add the following boilerplate:
 
 {% raw %}
-```html
+```html ; base.njk
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -173,7 +173,7 @@ Notice the three Nunjucks template variables; `<title>My Projecct - {{ title }}<
 
 Now Eleventy knows about our base HTML layout, but we need to also set it in our index file. Update `index.md` with the following content:
 
-```markdown
+```markdown ; index.md
 ---
 title: My 11ty site
 layout: base.njk
@@ -192,7 +192,7 @@ Later on, we'll make more layouts, but for now we can stick with just the one.
 
 Eleventy supports a bunch of templating engines out of the box, but the default is [Liquid](https://shopify.github.io/liquid/). We used Nunjucks for our layouts, so it might be a good idea to set the default templating engine for our markdown files to Nunjucks as well to be consistent. If you prefer Liquid's syntax, that's totally fine! We can configure the default in `.eleventy.js`:
 
-```js
+```js ; .eleventy.js
 export default function (config) {
   return {
     markdownTemplateEngine: "njk",
@@ -224,7 +224,7 @@ touch src/contact.md
 
 We'll add some simple content:
 
-```markdown
+```markdown ; contact.md
 ---
 title: Contact me
 layout: base.njk
@@ -240,7 +240,7 @@ Serve the site and navigate to `localhost:8080/contact`, where you should see ou
 
 We can't expect visitors to navigate directly to the contact page. We could use an absolute link, like `[contact](/contact)`, but using an absolute path means our link probably won't work inside the application we're using to author the content (like Obsidian). Additionally, we might later have nested paths or more complicated setups where the name of the html output doesn't necessarily match the name of the source file, we need a better way. Using an absolute path also won't always work Thankfully, Eleventy has us covered. We just need to add a plugin:
 
-```js
+```js ; .eleventy.js
 import { InputPathToUrlTransformPlugin } from "@11ty/eleventy";
 
 export default function (config) {
@@ -260,7 +260,7 @@ The `InputPathToUrlTransformPlugin` does what it says on the tin - transforms in
 
 Now if we want to link to our contact page we can link directly to the markdown file:
 
-```markdown
+```markdown ; index.md
 ---
 title: My 11ty site
 layout: base.njk
