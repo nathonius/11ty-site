@@ -11,6 +11,13 @@ export function shikiPlugin(config) {
         light: "vitesse-light",
         dark: "vitesse-dark",
       },
+      transformers: [
+        {
+          root: function () {
+            this.pre.properties.dataLang = this.options.lang;
+          },
+        },
+      ],
     });
     config.amendLibrary("md", (mdLib) => {
       mdLib.use(plugin);

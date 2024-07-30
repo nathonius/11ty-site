@@ -18,13 +18,14 @@ pre.shiki {
   border-radius: var(--space-s);
   padding: var(--space-m);
   overflow: hidden;
+  white-space: pre-wrap;
   width: 100%;
+
   code {
     /* place a padding on the inner code element so that when it overflows
     there's still spacing on the right side */
     padding-right: 1rem;
     width: 100%;
-    overflow: auto;
     display: block;
   }
 
@@ -34,24 +35,26 @@ pre.shiki {
     display: flex;
     gap: var(--space-xs);
     position: absolute;
-    right: var(--space-m);
-    top: var(--space-m);
-    opacity: 0;
-    transition: opacity 0.2s;
+    right: var(--space-s);
+    top: var(--space-s);
+    font-size: 0.7em;
+    background-color: transparent;
+    opacity: 0.6;
 
     svg {
       display: none;
       width: 1em;
       height: 1em;
     }
-    &.copied svg {
-      display: initial;
-    }
-  }
 
-  &:hover,
-  &:focus-within {
-    button.copy-code-button {
+    &.copied {
+      svg {
+        display: initial;
+      }
+    }
+
+    &:hover,
+    &:focus {
       opacity: 1;
     }
   }

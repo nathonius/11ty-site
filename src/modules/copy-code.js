@@ -9,17 +9,21 @@ function addCopyCodeButton(codeblock) {
   const button = document.createElement("button");
   button.type = "button";
   button.classList.add("copy-code-button");
-  const text = document.createElement("div");
-  text.innerText = "Copy";
-  button.appendChild(text);
+  button.title = "copy code";
+
+  // Language text shown most of the time
+  const lang = document.createElement("span");
+  lang.innerText = codeblock.dataset.lang ?? "code";
+  button.appendChild(lang);
+
   const icon = lucide.createElement(lucide.Check);
   button.appendChild(icon);
   button.addEventListener("click", () => {
     copyCodeToClipboard(codeblock).then(() => {
       button.classList.add("copied");
-      text.innerText = "Copied";
+      lang.innerText = "copied";
       window.setTimeout(() => {
-        text.innerText = "Copy";
+        lang.innerText = codeblock.dataset.lang ?? "code";
         button.classList.remove("copied");
       }, 2000);
     });
