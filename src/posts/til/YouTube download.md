@@ -4,8 +4,8 @@ summary: A small utility script for downloading YouTube videos and converting to
 date: 2024-04-28
 tags:
   - post
-  - bit
-permalink: "/bits/yt-dl-cli/"
+  - til
+permalink: "/til/yt-dl-cli/"
 ---
 
 Just a small script I use for downloading video / audio from YouTube. There's lots of sites out there that claim to download from YouTube, but I like that this method only uses open source projects.

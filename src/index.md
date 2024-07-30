@@ -8,4 +8,4 @@ summary: Homepage of Nathan Smith, full-time and hobby open source software deve
 
 I'm a full-time software developer and work on open source projects in my free time.
 
-You can [contact](./contact.md) me or check out the [projects](./projects.md) I work on.
+You can [contact](./contact.md) me or check out the [projects](./projects.md) I work on. Still want to know more? Take a look at my [slash pages](./slashes.md).
