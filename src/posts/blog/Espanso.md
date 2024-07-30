@@ -28,7 +28,6 @@ I use the [python version](https://faker.readthedocs.io/en/master/) of faker, bu
 I use a combination of a choice match and a shell match to input fake data:
 
 ```yaml
-# match/faker.yml
 matches:
   - trigger: ":faker"
     replace: "{{output}}"
@@ -59,7 +58,6 @@ matches:
 ```
 
 ```python
-# scripts/fake.py
 from faker import Faker
 from os import environ
 fake = Faker()
@@ -73,7 +71,6 @@ print(getattr(fake, module)())
 The lorem ipsum match is a little simpler. There are certainly other tools, but I use the [lorem-ipsum-cli](https://www.npmjs.com/package/lorem-ipsum-cli) node package. I have two matches - one for a single sentence and one for a single paragraph.
 
 ```yaml
-# match/dev.yml
 matches:
   - trigger: ":lorem"
     label: "Paragraph"
@@ -101,7 +98,6 @@ VS Code is my primary editor and supports snippets out the box, but I find a uni
 When working with legacy code (or on the occasion you actually have to write one of these anti-patterns), it can be useful to disable linting rules for a single line of code. For me, it's usually null assertions or line length issues. I have these eslint comment replacements for use in VS Code.
 
 ```yaml
-# match/dev.yml
 matches:
   - trigger: ":nonnull"
     replace: "// eslint-disable-next-line @typescript-eslint/no-non-null-assertion -- This will not be null."
@@ -161,7 +157,6 @@ matches:
 It's simple, but if I have to type the same word over and over again and misspell it half the time - Espanso to the rescue!
 
 ```yaml
-# match/words.yml
 matches:
   - trigger: ":elg"
     replace: "eligibility"
