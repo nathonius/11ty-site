@@ -3,7 +3,7 @@ title: Today I Learned
 layout: home.njk
 summary: Code snippets, small learnings, and any other quick thoughts I want to share.
 aliases:
-  - /bits
+  - /bits/
 ---
 
 {% set allTils = collections['til'] %}
