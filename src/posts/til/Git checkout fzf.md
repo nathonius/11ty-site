@@ -4,8 +4,8 @@ summary: The best way to find the branch you want, quickly
 date: 2024-05-28
 tags:
   - post
-  - bit
-permalink: "/bits/git-checkout-fzf/"
+  - til
+permalink: "/til/git-checkout-fzf/"
 ---
 
 There are a ton of uses for [fzf](https://github.com/junegunn/fzf) and this is my absolute favorite. I work in a big monorepo with a team of nearly twenty engineers and it can be hard to find the branch I want since everyone is always pushing new branches. Fzf to the rescue!

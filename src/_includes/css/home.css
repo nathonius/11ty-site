@@ -72,3 +72,11 @@ div.home-wrapper {
     }
   }
 }
+
+#brain-made-mark {
+  display: block;
+  width: 150px;
+  svg {
+    width: 100%;
+  }
+}

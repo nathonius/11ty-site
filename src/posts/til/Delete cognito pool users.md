@@ -4,8 +4,8 @@ summary: Save yourself some time when testing with AWS Cognito
 date: 2024-05-29
 tags:
   - post
-  - bit
-permalink: "/bits/delete-cognito-users/"
+  - til
+permalink: "/til/delete-cognito-users/"
 ---
 
 [AWS Cognito](https://aws.amazon.com/cognito/) is an identity service provided by Amazon that integrates with its other AWS services. That's basically the only good thing I can say about it, but you don't always get to choose your tools.

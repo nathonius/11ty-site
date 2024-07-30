@@ -2,6 +2,8 @@
 title: Contact
 layout: home.njk
 summary: How to get in touch with Nathan Smith.
+aliases:
+  - /where/
 ---
 
 ## Contact
