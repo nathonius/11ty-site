@@ -1,3 +1,5 @@
+import { Check, createElement } from "./icons.js";
+
 function addCopyCodeButtons() {
   const codeblocks = document.querySelectorAll("pre.shiki");
   for (const block of codeblocks) {
@@ -16,7 +18,7 @@ function addCopyCodeButton(codeblock) {
   lang.innerText = codeblock.dataset.lang ?? "code";
   button.appendChild(lang);
 
-  const icon = lucide.createElement(lucide.Check);
+  const icon = createElement(Check);
   button.appendChild(icon);
   button.addEventListener("click", () => {
     copyCodeToClipboard(codeblock).then(() => {

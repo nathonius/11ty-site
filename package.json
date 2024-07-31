@@ -19,9 +19,11 @@
     "@shikijs/markdown-it": "^1.10.3",
     "@types/node": "^20.14.10",
     "11ty.ts": "^0.0.3",
+    "eleventy-plugin-icons": "^4.5.0",
     "eleventy-plugin-redirects": "^1.0.0",
     "html-minifier": "^4.0.0",
     "lightningcss": "^1.25.1",
+    "lucide-static": "^0.417.0",
     "markdown-it-obsidian-callouts": "^0.2.6",
     "through2": "^4.0.2",
     "uglify-js": "^3.19.0"

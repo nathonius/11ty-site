@@ -5,12 +5,12 @@ import { InputPathToUrlTransformPlugin } from "@11ty/eleventy";
 import { defineConfig } from "11ty.ts";
 import { draftsPlugin } from "./build/drafts-plugin.js";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
-import { getProp } from "./build/util.js";
 import { minifyPlugin } from "./build/minify-plugin.js";
 import navigation from "@11ty/eleventy-navigation";
 import output from "@11ty/eleventy-plugin-directory-output";
 import { shikiPlugin } from "./build/shiki-plugin.js";
 import RedirectsPlugin from "eleventy-plugin-redirects";
+import IconsPlugin from "eleventy-plugin-icons";
 
 const plugins = [
   { plugin: navigation },
@@ -21,6 +21,18 @@ const plugins = [
   { plugin: minifyPlugin },
   { plugin: draftsPlugin },
   { plugin: RedirectsPlugin, options: { template: "netlify" } },
+  {
+    plugin: IconsPlugin,
+    options: {
+      sources: [
+        {
+          name: "lucide",
+          path: "node_modules/lucide-static/icons",
+          default: true,
+        },
+      ],
+    },
+  },
 ];
 
 export default defineConfig(function (config) {
@@ -71,10 +83,6 @@ export default defineConfig(function (config) {
       return -1;
     });
     return copy;
-  });
-
-  config.addFilter("includes", function (value, key, test) {
-    return value.filter((v) => getProp(v, key).includes(test));
   });
 
   // Add markdown-it plugins
