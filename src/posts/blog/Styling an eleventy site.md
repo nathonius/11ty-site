@@ -3,9 +3,6 @@ title: Adding styles to an Eleventy site
 summary: 
 publish_date: 
 update_date: 
-tags:
-  - post
-  - blog-post
 series_number: 2
 series: Building a website with Eleventy and Obsidian
 permalink: "/blog/eleventy-site-styling/"

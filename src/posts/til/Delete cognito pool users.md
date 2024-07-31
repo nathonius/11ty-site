@@ -2,9 +2,6 @@
 title: Delete all cognito users in a pool
 summary: Save yourself some time when testing with AWS Cognito
 date: 2024-05-29
-tags:
-  - post
-  - til
 permalink: "/til/delete-cognito-users/"
 ---
 

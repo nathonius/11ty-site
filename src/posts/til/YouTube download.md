@@ -2,9 +2,6 @@
 title: YouTube download CLI
 summary: A small utility script for downloading YouTube videos and converting to ogg-vorbis
 date: 2024-04-28
-tags:
-  - post
-  - til
 permalink: "/til/yt-dl-cli/"
 ---
 

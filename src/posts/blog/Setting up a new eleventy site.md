@@ -4,8 +4,6 @@ summary: Part one of a series on publishing a website from an Obsidian vault.
 date: 2024-07-23
 update_date: 2024-07-23
 tags:
-  - post
-  - blog-post
   - 11ty-site
 series_number: 1
 series: Building a website with Eleventy and Obsidian
