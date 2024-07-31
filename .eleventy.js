@@ -34,6 +34,16 @@ export default defineConfig(function (config) {
     return Object.keys(value);
   });
 
+  config.addFilter("activeRoute", function (value, baseRoute) {
+    if (
+      (baseRoute === "/" && value.length < 2) ||
+      (baseRoute !== "/" && value.startsWith(baseRoute))
+    ) {
+      return "class=active";
+    }
+    return "";
+  });
+
   config.addFilter("projectStatusSort", function (value) {
     if (!Array.isArray(value)) {
       return value;

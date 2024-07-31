@@ -7,11 +7,11 @@
 <div class="home-wrapper">
   <nav class="site-nav">
     <ul>
-      <li><a id="nav-home" href="index.md">Home</a></li>
-      <li><a id="nav-blog" href="blog.md">Blog</a></li>
-      <li><a id="nav-til" href="til.md">TIL</a></li>
-      <li><a id="nav-projects" href="projects.md">Projects</a></li>
-      <li><a id="nav-contact" href="contact.md">Contact</a></li>
+      <li><a id="nav-home" {{- page.url | activeRoute("/") }} href="index.md">Home</a></li>
+      <li><a id="nav-blog" {{- page.url | activeRoute("/blog") }} href="blog.md">Blog</a></li>
+      <li><a id="nav-til" {{- page.url | activeRoute("/til") }} href="til.md">TIL</a></li>
+      <li><a id="nav-projects" {{- page.url | activeRoute("/projects") }} href="projects.md">Projects</a></li>
+      <li><a id="nav-contact" {{- page.url | activeRoute("/contact") }} href="contact.md">Contact</a></li>
     </ul>
     <button id="theme-toggle" type="button" aria-label="Toggle theme">
       <span id="theme-emoji" aria-label="switch to light mode" role="img"
@@ -28,6 +28,5 @@
 {% endblock %}
 {% block postscripts %}
 {{ super() }}
-<script type="module" src="/modules/active-route.js"></script>
 <script type="module" src="/modules/theme-toggle.js"></script>
 {% endblock %}
