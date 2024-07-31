@@ -4,25 +4,29 @@ import { minify as htmlMinify } from "html-minifier";
 import { minify as jsMinify } from "uglify-js";
 import path from "node:path";
 import through from "through2";
+import { runMode } from "./util.js";
 
 export function minifyPlugin(config) {
   // Minify css
   config.addExtension("css", {
     outputFileExtension: "css",
     compile: (content, filePath) => () => {
-      const { code } = cssMinify({
-        filename: path.parse(filePath).base,
-        code: Buffer.from(content),
-        minify: true,
-      });
-      return code.toString();
+      if (runMode() === "build") {
+        const { code } = cssMinify({
+          filename: path.parse(filePath).base,
+          code: Buffer.from(content),
+          minify: true,
+        });
+        return code.toString();
+      }
+      return content;
     },
   });
 
   // Minify js modules
   config.addPassthroughCopy("src/modules", {
     transform: (src, _dest, _stats) => {
-      if (path.extname(src) !== ".js") {
+      if (path.extname(src) !== ".js" || runMode() !== "build") {
         return null;
       }
       return through(function (chunk, _enc, done) {
@@ -34,7 +38,7 @@ export function minifyPlugin(config) {
 
   // Minify html
   config.addTransform("htmlmin", function (content, outputPath) {
-    if (outputPath.endsWith(".html")) {
+    if (outputPath.endsWith(".html") && runMode() === "build") {
       return htmlMinify(content, {
         collapseBooleanAttributes: true,
         collapseInlineTagWhitespace: true,
