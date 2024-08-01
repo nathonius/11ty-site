@@ -39,7 +39,6 @@ export default function shikiPlugin(config) {
 }
 ```
 
-We've provided shiki with two themes. We need to provide a small CSS snippet
 Then we just add the plugin to the Eleventy config:
 
 ```js ; .eleventy.js
@@ -183,7 +182,7 @@ const shiki = await Shiki({
 
 The transformer looks for a specific syntax for filenames in Markdown codeblocks, for example:
 
-````
+````markdown
 ```js ; shiki-plugin.js
 const shiki = await Shiki({
 	theme: "vitesse-dark",
