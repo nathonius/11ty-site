@@ -6,7 +6,7 @@ div.home-wrapper {
     "top-left top top-right"
     "body-left body body-right"
     "footer footer footer";
-  grid-template-columns: 1fr minmax(750px, 1fr) 1fr;
+  grid-template-columns: 1fr minmax(95vw, 750px) 1fr;
 
   nav.site-nav {
     grid-area: top;
