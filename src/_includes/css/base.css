@@ -15,14 +15,21 @@ html[data-theme="dark"] {
   --text: white;
   --primary: var(--green);
   --secondary: var(--red);
+
+  /* Typography */
   --font-sans-serif: -apple-system, BlinkMacSystemFont, avenir next, avenir,
     segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial,
     sans-serif;
-  --font-serif: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman,
-    Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji,
-    Segoe UI Emoji, Segoe UI Symbol;
+  --font-serif: "EB Garamond", "EB Garamond-fallback", "Times New Roman", Times,
+    serif;
   --font-mono: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
     monospace;
+  --font-size-h1: 2em;
+  --font-size-h2: 1.5em;
+  --font-size-h3: 1.17em;
+  --font-size-h4: 1em;
+  --font-size-h5: 0.83em;
+  --font-size-h6: 0.67em;
 
   /* Other vars */
   --space-xs: 0.25rem;
@@ -40,6 +47,13 @@ html[data-theme="light"] {
   }
 }
 
+@font-face {
+  font-family: "EB Garamond-fallback";
+  size-adjust: 94.30000000000004%;
+  ascent-override: 110%;
+  src: local("Times New Roman");
+}
+
 /* Box sizing */
 html {
   box-sizing: border-box;
@@ -54,8 +68,27 @@ html {
 body {
   background-color: var(--surface-1);
   color: var(--text);
-  font-family: var(--font-sans-serif);
-  font-size: 1.125rem;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+}
+h2 {
+  font-size: var(--font-size-h2);
+}
+h3 {
+  font-size: var(--font-size-h3);
+}
+h4 {
+  font-size: var(--font-size-h4);
+}
+h5 {
+  font-size: var(--font-size-h5);
+}
+h6 {
+  font-size: var(--font-size-h6);
 }
 
 a {

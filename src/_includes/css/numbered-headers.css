@@ -1,7 +1,4 @@
 body {
-  /* Approximate width of the h1-h6 marker */
-  --marker-width: -34px;
-
   h1,
   h2,
   h3,
@@ -9,6 +6,10 @@ body {
   h5,
   h6 {
     position: relative;
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    left: -3.5rem;
+    gap: 0.5rem;
   }
 
   h1::before,
@@ -18,36 +19,28 @@ body {
   h5::before,
   h6::before {
     opacity: 0.2;
-    font-size: 0.8em;
-    font-weight: 400;
-    position: absolute;
+    font-size: inherit;
+    font-weight: inherit;
     visibility: visible;
-    vertical-align: middle;
-    left: var(--marker-width);
+    text-align: end;
   }
 
   h1::before {
     content: "h1";
-    line-height: calc(var(--line-height) / 0.8);
   }
   h2::before {
     content: "h2";
-    line-height: calc(var(--line-height) / 0.8);
   }
   h3::before {
     content: "h3";
-    line-height: calc(var(--line-height) / 0.8);
   }
   h4::before {
     content: "h4";
-    line-height: calc(var(--line-height) / 0.8);
   }
   h5::before {
     content: "h5";
-    line-height: calc(var(--line-height) / 0.8);
   }
   h6::before {
     content: "h6";
-    line-height: calc(var(--line-height) / 0.8);
   }
 }
