@@ -7,7 +7,7 @@ function addCopyCodeButtons() {
   }
 }
 
-function addCopyCodeButton(codeblock) {
+function addCopyCodeButton(pre) {
   const button = document.createElement("button");
   button.type = "button";
   button.classList.add("copy-code-button");
@@ -15,22 +15,22 @@ function addCopyCodeButton(codeblock) {
 
   // Language text shown most of the time
   const lang = document.createElement("span");
-  lang.innerText = codeblock.dataset.lang ?? "code";
+  lang.innerText = pre.dataset.lang ?? "code";
   button.appendChild(lang);
 
   const icon = createElement(Check);
   button.appendChild(icon);
   button.addEventListener("click", () => {
-    copyCodeToClipboard(codeblock).then(() => {
+    copyCodeToClipboard(pre.firstChild).then(() => {
       button.classList.add("copied");
       lang.innerText = "copied";
       window.setTimeout(() => {
-        lang.innerText = codeblock.dataset.lang ?? "code";
+        lang.innerText = pre.dataset.lang ?? "code";
         button.classList.remove("copied");
       }, 2000);
     });
   });
-  codeblock.appendChild(button);
+  pre.appendChild(button);
 }
 
 function copyCodeToClipboard(codeblock) {
