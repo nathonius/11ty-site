@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/posts/blog/Syntax highlighting in Eleventy.md",
+                "file": "src/posts/blog/Eleventy drafts.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "src/posts/blog/Syntax highlighting in Eleventy.md",
+                "file": "src/posts/blog/Eleventy drafts.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "src/posts/blog/Syntax highlighting in Eleventy.md",
+                "file": "src/posts/blog/Eleventy drafts.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "src/posts/blog/Syntax highlighting in Eleventy.md"
+                "file": "src/posts/blog/Eleventy drafts.md"
               }
             }
           },
@@ -154,18 +154,19 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "5af69366df55b9d3",
+  "active": "051048c34707b4f4",
   "lastOpenFiles": [
-    "src/posts/blog/attachments/codeblock-overflow.png",
-    "src/posts/blog/attachments/highlighted-code.png",
+    "src/posts/til/Git checkout fzf.md",
+    "src/posts/blog/Eleventy drafts.md",
+    "src/posts/til/Delete cognito pool users.md",
+    "src/posts/blog/Syntax highlighting in Eleventy.md",
+    "src/posts/blog/Espanso.md",
     "src/posts/blog/Setting up a new eleventy site.md",
     "src/posts/blog/Styling an eleventy site.md",
-    "src/posts/blog/Syntax highlighting in Eleventy.md",
+    "src/posts/blog/attachments/codeblock-overflow.png",
+    "src/posts/blog/attachments/highlighted-code.png",
     "templates/Blog Post.md",
     "src/posts/til/YouTube download.md",
-    "src/posts/til/Git checkout fzf.md",
-    "src/posts/til/Delete cognito pool users.md",
-    "src/posts/blog/Espanso.md",
     "templates",
     "src/index.md",
     "node_modules/sharp/node_modules/detect-libc/lib/process.js",
@@ -182,7 +183,6 @@
     "node_modules/lucide-static/icons/youtube.svg",
     "node_modules/lucide-static/icons/x.svg",
     "node_modules/lucide-static/icons/workflow.svg",
-    "node_modules/lucide-static/icons/wrench.svg",
     "node_modules/lucide-static/icons",
     "node_modules/lucide-static/tags.json",
     "node_modules/lucide-static/package.json",

@@ -5,6 +5,8 @@ date: 2024-07-31
 update_date: 
 permalink: /blog/syntax-highlighting-eleventy/
 draft: false
+tags:
+  - eleventy
 ---
 The codeblocks on this site are built using an [Eleventy](https://www.11ty.dev/) plugin to integrate the [Shiki](https://shiki.style/) syntax highlighter. Here's an example:
 

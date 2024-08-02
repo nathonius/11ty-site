@@ -5,8 +5,10 @@ publish_date:
 update_date: 
 series_number: 2
 series: Building a website with Eleventy and Obsidian
-permalink: "/blog/eleventy-site-styling/"
+permalink: /blog/eleventy-site-styling/
 draft: true
+tags:
+  - eleventy
 ---
 ## Styles
 
