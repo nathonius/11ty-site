@@ -3,7 +3,7 @@ title: Syntax highlighting in Eleventy
 summary: How the syntax highlighting and codeblocks work on this site
 date: 2024-07-31
 update_date: 
-permalink: /blog/syntax-highlighting-eleventy/
+permalink: /posts/blog/syntax-highlighting-eleventy/
 draft: false
 tags:
   - eleventy
