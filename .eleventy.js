@@ -51,7 +51,7 @@ export default defineConfig(function (config) {
       (baseRoute === "/" && value.length < 2) ||
       (baseRoute !== "/" && value.startsWith(baseRoute))
     ) {
-      return "class=active";
+      return "active";
     }
     return "";
   });

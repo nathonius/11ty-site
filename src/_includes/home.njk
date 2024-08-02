@@ -6,12 +6,12 @@
 {% block content %}
 <div class="home-wrapper">
   <nav class="site-nav">
-    <ul>
-      <li><a id="nav-home" {{- page.url | activeRoute("/") }} href="index.md">Home</a></li>
-      <li><a id="nav-blog" {{- page.url | activeRoute("/blog") }} href="blog.md">Blog</a></li>
-      <li><a id="nav-til" {{- page.url | activeRoute("/til") }} href="til.md">TIL</a></li>
-      <li><a id="nav-projects" {{- page.url | activeRoute("/projects") }} href="projects.md">Projects</a></li>
-      <li><a id="nav-contact" {{- page.url | activeRoute("/contact") }} href="contact.md">Contact</a></li>
+    <ul class="header-link-list">
+      <li><a id="nav-home" class="header-link {{ page.url | activeRoute("/") }}" href="index.md">Home</a></li>
+      <li><a id="nav-blog" class="header-link {{ page.url | activeRoute("/blog") }}" href="blog.md">Blog</a></li>
+      <li><a id="nav-til" class="header-link {{ page.url | activeRoute("/til") }}" href="til.md">TIL</a></li>
+      <li><a id="nav-projects" class="header-link {{ page.url | activeRoute("/projects") }}" href="projects.md">Projects</a></li>
+      <li><a id="nav-contact" class="header-link {{ page.url | activeRoute("/contact") }}" href="contact.md">Contact</a></li>
     </ul>
     <button id="theme-toggle" type="button" aria-label="Toggle theme">
       <span id="theme-emoji" aria-label="switch to light mode" role="img"

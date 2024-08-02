@@ -24,7 +24,7 @@ pre.shiki {
   code {
     /* place a padding on the inner code element so that when it overflows
     there's still spacing on the right side */
-    padding-right: 1rem;
+    /* padding-right: 1rem; */
     width: 100%;
     display: block;
   }
