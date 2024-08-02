@@ -1,7 +1,7 @@
 ---
 title: The best new CSS function
 summary: Color mix makes life that much easier
-date: 
+date: 2024-08-02
 update_date: 
 permalink: /blog/the-best-new-css-function/
 draft: false
