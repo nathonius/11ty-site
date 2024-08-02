@@ -1,54 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-theme="dark">
   <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+      rel="stylesheet"
+    >
     {% block head %}
     {% endblock %}
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="{{ summary }}" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ summary }}">
     <script>
       function getToggle() {
-        return document.querySelector("button#theme-toggle");
+        return document.querySelector('button#theme-toggle');
       }
       function updateEmoji(theme) {
-        const themeEmoji = getToggle()?.querySelector("#theme-emoji");
+        const themeEmoji = getToggle()?.querySelector('#theme-emoji');
         if (themeEmoji) {
-          if (theme === "dark") {
-            themeEmoji.innerHTML = "🌙";
-            themeEmoji.ariaLabel = "switch to light mode";
+          if (theme === 'dark') {
+            themeEmoji.innerHTML = '🌙';
+            themeEmoji.ariaLabel = 'switch to light mode';
           } else {
-            themeEmoji.innerHTML = "☀️";
-            themeEmoji.ariaLabel = "switch to dark mode";
+            themeEmoji.innerHTML = '☀️';
+            themeEmoji.ariaLabel = 'switch to dark mode';
           }
         }
       }
       function setTheme(theme, store) {
-        const newTheme = theme ?? "dark";
+        const newTheme = theme ?? 'dark';
         document.documentElement.dataset.theme = newTheme;
         updateEmoji(newTheme);
         if (store) {
-          window.localStorage.setItem("prefers-theme", newTheme);
+          window.localStorage.setItem('prefers-theme', newTheme);
         }
       }
 
-      let theme = "dark";
-      const preference = window.localStorage.getItem("prefers-theme");
+      let theme = 'dark';
+      const preference = window.localStorage.getItem('prefers-theme');
       if (preference) {
         theme = preference;
-      } else if (
-        window.matchMedia &&
-        window.matchMedia("(prefers-color-scheme: light)").matches
-      ) {
-        theme = "light";
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        theme = 'light';
       }
       setTheme(theme);
     </script>
-    {% block prescripts %} {% endblock %} {% block styles %}
-  {% endblock %}
-    <link rel="stylesheet" href="/base.css" />
+    {% block prescripts %}
+    {% endblock %}
+    {% block styles %}
+    {% endblock %}
+    <link rel="stylesheet" href="/base.css">
     <title>{{ title }}</title>
   </head>
   <body>

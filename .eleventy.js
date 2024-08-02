@@ -90,6 +90,11 @@ export default defineConfig(function (config) {
     mdLib.use(CalloutPlugin);
   });
 
+  config.setLiquidOptions({
+    jsTruthy: true,
+    dateFormat: "%a, %b %d, %Y",
+  });
+
   return {
     markdownTemplateEngine: "liquid",
     htmlTemplateEngine: "liquid",

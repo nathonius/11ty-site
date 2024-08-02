@@ -1,7 +1,7 @@
-{%- layout "base.liquid" -%}
+{%- layout 'base.liquid' -%}
 {% block styles %}
 {{ block.super }}
-<link rel="stylesheet" href="/home.css" />
+<link rel="stylesheet" href="/home.css">
 {% endblock %}
 {% block content %}
 <div class="home-wrapper">
@@ -9,13 +9,17 @@
     <ul class="header-link-list">
       <li><a id="nav-home" class="header-link {{ page.url | activeRoute: "/" }}" href="index.md">Home</a></li>
       <li><a id="nav-blog" class="header-link {{ page.url | activeRoute: "/posts" }}" href="posts.md">Posts</a></li>
-      <li><a id="nav-projects" class="header-link {{ page.url | activeRoute: "/projects" }}" href="projects.md">Projects</a></li>
-      <li><a id="nav-contact" class="header-link {{ page.url | activeRoute: "/contact" }}" href="contact.md">Contact</a></li>
+      <li>
+        <a id="nav-projects" class="header-link {{ page.url | activeRoute: "/projects" }}" href="projects.md"
+          >Projects</a
+        >
+      </li>
+      <li>
+        <a id="nav-contact" class="header-link {{ page.url | activeRoute: "/contact" }}" href="contact.md">Contact</a>
+      </li>
     </ul>
     <button id="theme-toggle" type="button" aria-label="Toggle theme">
-      <span id="theme-emoji" aria-label="switch to light mode" role="img"
-        >🌙</span
-      >
+      <span id="theme-emoji" aria-label="switch to light mode" role="img">🌙</span>
     </button>
   </nav>
   <main class="site-content">

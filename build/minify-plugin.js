@@ -8,19 +8,21 @@ import { runMode } from "./util.js";
 
 export function minifyPlugin(config) {
   // Minify css
+  config.addTemplateFormats("css");
   config.addExtension("css", {
+    key: "liquid",
     outputFileExtension: "css",
-    compile: (content, filePath) => () => {
-      if (runMode() === "build") {
-        const { code } = cssMinify({
-          filename: path.parse(filePath).base,
-          code: Buffer.from(content),
-          minify: true,
-        });
-        return code.toString();
-      }
-      return content;
-    },
+  });
+  config.addTransform("cssmin", function (content, outputPath) {
+    if (outputPath.endsWith(".css") && runMode() === "build") {
+      const { code } = cssMinify({
+        filename: path.parse(outputPath).base,
+        code: Buffer.from(content),
+        minify: true,
+      });
+      return code.toString();
+    }
+    return content;
   });
 
   // Minify js modules
