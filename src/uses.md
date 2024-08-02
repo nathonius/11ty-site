@@ -12,7 +12,7 @@ summary: All the tools I use on a day-to-day basis
 - I stick with [Windows Terminal](https://github.com/microsoft/terminal) on PC (at least until WezTerm gets a bit more stable there).
 - My shell of choice is zsh and I use [Antigen](https://github.com/zsh-users/antigen) as a plugin manager. You can see my full zsh setup in my [dotfiles](https://github.com/nathonius/dotfiles/blob/main/.zshrc).
 - I use [Oh My Posh](https://ohmyposh.dev/) to build my prompt; if you're still using Powerlevel10k, I recommend checking it out!
-- I wrote my own terminal / editor theme, [Alloy](https://github.com/nathonius/alloy-theme), but have slowly been switching to [Dracula](https://draculatheme.com/) in certain places.
+- I wrote my own terminal / editor theme, [Alloy](https://github.com/nathonius/alloy-theme), but have slowly been switching to [Catppuccin Frappe](https://catppuccin.com/) in most places.
 
 ## Desktop apps
 
