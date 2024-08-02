@@ -3,7 +3,7 @@ title: Managing drafts for Eleventy
 summary: Eleventy v3 includes a great new feature that supports draft documents
 date: 2024-08-01
 update_date: 
-permalink: /blog/eleventy-drafts/
+permalink: /posts/blog/eleventy-drafts/
 draft: false
 tags:
   - eleventy
