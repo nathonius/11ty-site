@@ -11,6 +11,10 @@ html[data-theme="dark"] .shiki span {
 pre,
 code {
   font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+pre > code {
+  font-size: 1em;
 }
 
 pre.shiki {
