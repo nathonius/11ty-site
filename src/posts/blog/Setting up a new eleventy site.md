@@ -140,7 +140,7 @@ First, we need to create the `_includes` directory, a special directory of templ
 
 ```shell
 mkdir src/_includes
-touch src/_includes/base.njk
+touch src/_includes/base.liquid
 ```
 
 In `base.njk`, we add the following boilerplate:
@@ -157,7 +157,7 @@ In `base.njk`, we add the following boilerplate:
   <body>
     <h1>{{ title }}</h1>
     <main>
-      {{ content | safe }}
+      {{ content }}
     </main>
   </body>
 </html>
@@ -165,7 +165,7 @@ In `base.njk`, we add the following boilerplate:
 {% endraw %}
 
 {% raw %}
-Notice the three Nunjucks template variables; `<title>My Projecct - {{ title }}</title>` will set the page title from metadata we provide in content files, while `{{ content | safe }}` will be replaced with the content from our markdown files. We also add a page header using the title.
+Notice the three Nunjucks template variables; `<title>My Projecct - {{ title }}</title>` will set the page title from metadata we provide in content files, while `{{ content }}` will be replaced with the content from our markdown files. We also add a page header using the title.
 {% endraw %}
 
 > [!NOTE]

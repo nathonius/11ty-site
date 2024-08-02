@@ -91,8 +91,8 @@ export default defineConfig(function (config) {
   });
 
   return {
-    markdownTemplateEngine: "njk",
-    htmlTemplateEngine: "njk",
+    markdownTemplateEngine: "liquid",
+    htmlTemplateEngine: "liquid",
     dir: {
       input: "src",
       output: "public",

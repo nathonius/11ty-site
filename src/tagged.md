@@ -4,13 +4,13 @@ pagination:
   size: 1
   alias: tag
 permalink: /tagged/{{ tag }}/
-layout: home.njk
+layout: home.liquid
 ---
 
 <h1>Tagged “{{ tag }}”</h1>
 
 <ol>
-{% set taglist = collections[ tag ] %}
+{% assign taglist = collections[ tag ] %}
 {% for post in taglist | reverse %}
   <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
 {% endfor %}

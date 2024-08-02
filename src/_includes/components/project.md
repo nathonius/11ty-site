@@ -1,3 +1,3 @@
 ### {{data.title}}
 
-{{ content | safe }}
+{{ content }}

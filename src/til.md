@@ -1,12 +1,12 @@
 ---
 title: Today I Learned
-layout: home.njk
+layout: home.liquid
 summary: Code snippets, small learnings, and any other quick thoughts I want to share.
 aliases:
   - /bits/
 ---
 
-{% set allTils = collections['til'] %}
+{% assign allTils = collections['til'] %}
 
 ## Today I Learned
 
@@ -16,8 +16,8 @@ Too small for a full blog post, these TILs are code snippets, small learnings, a
 
 ### [{{til.data.title}}]({{til.page.url}})
 
-{{til.data.summary | safe}}
+{{til.data.summary}}
 
-{{ til.page.date.toLocaleDateString() }}
+{{ til.page.date | date }}
 
 {% endfor %}

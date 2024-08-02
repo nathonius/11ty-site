@@ -1,10 +1,10 @@
 ---
 title: Blog
-layout: home.njk
+layout: home.liquid
 summary: Thoughts on tech, life, and anything else.
 ---
 
-{% set allPosts = collections['blog-post'] %}
+{% assign allPosts = collections['blog-post'] %}
 
 ## Blog
 
@@ -12,8 +12,8 @@ summary: Thoughts on tech, life, and anything else.
 
 ### [{{post.data.title}}]({{post.page.url}})
 
-{{post.data.summary | safe}}
+{{post.data.summary}}
 
-{{ post.page.date.toLocaleDateString() }}
+{{ post.page.date | date }}
 
 {% endfor %}

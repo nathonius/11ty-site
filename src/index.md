@@ -1,6 +1,6 @@
 ---
 title: Home
-layout: home.njk
+layout: home.liquid
 summary: Homepage of Nathan Smith, full-time and hobby open source software developer.
 ---
 

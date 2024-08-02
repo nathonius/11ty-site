@@ -1,5 +1,5 @@
 ---
-layout: home.njk
+layout: home.liquid
 title: Slash pages
 summary: Directory of all my slash pages
 ---

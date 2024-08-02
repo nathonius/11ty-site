@@ -1,6 +1,6 @@
 ---
 title: Projects
-layout: home.njk
+layout: home.liquid
 summary: All the projects worked on by Nathan Smith.
 ---
 These are some projects I have created or worked on. Some are more maintained than others, but everything is open source and freely licensed, so please feel free to steal.
@@ -9,10 +9,10 @@ These are some projects I have created or worked on. Some are more maintained th
 
 I maintain the following plugins for [Obsidian](https://obsidian.md/).
 
-{% set allProjects = collections.project | projectStatusSort %}
+{% assign allProjects = collections.project | projectStatusSort %}
 
 {% for project in allProjects %}
-{% if project.data.tags.includes("obsidian") %}
+{% if project.data.tags | find: "obsidian" %}
 ### {{project.data.title}}
 
 {{project.data.summary}}
@@ -30,7 +30,7 @@ I maintain the following plugins for [Obsidian](https://obsidian.md/).
 I am the author of the following modules for [Foundry VTT](https://foundryvtt.com/).
 
 {% for project in allProjects %}
-{% if project.data.tags.includes("foundryvtt") %}
+{% if project.data.tags | find: "foundryvtt" %}
 ### {{project.data.title}}
 
 {{project.data.summary}}
