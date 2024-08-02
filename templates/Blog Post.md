@@ -3,6 +3,6 @@ title: "{{VALUE:title}}"
 summary: 
 date: 
 update_date: 
-permalink: /blog/{{MACRO:Slugify}}/
+permalink: /posts/blog/{{MACRO:Slugify}}/
 draft: true
 ---
