@@ -1,0 +1,32 @@
+---
+layout: home.liquid
+---
+{% block styles %}
+{{ block.super }}
+{% comment %} <link rel="stylesheet" href="/pagefind/pagefind-ui.css"> {% endcomment %}
+<link rel="stylesheet" href="/search.css">
+{% endblock %}
+{% block prescripts %}
+{{ block.super }}
+<script src="/pagefind/pagefind-ui.js"></script>
+{% endblock %}
+{% block postscripts %}
+{{ block.super }}
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    new PagefindUI({
+      element: '#search',
+      showSubResults: true,
+      showImages: false,
+      translations: { placeholder: 'Search posts, pages, and projects' },
+      autofocus: true,
+    });
+  });
+</script>
+{% endblock %}
+{% block sitecontent %}
+<h1>Search</h1>
+<div class="search-wrapper">
+  <div id="search"></div>
+</div>
+{% endblock %}
