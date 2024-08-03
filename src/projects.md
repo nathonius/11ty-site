@@ -12,7 +12,7 @@ I maintain the following plugins for [Obsidian](https://obsidian.md/).
 {% assign allProjects = collections.project | projectStatusSort %}
 
 {% for project in allProjects %}
-{% if project.data.tags | find: "obsidian" %}
+{% if project.data.tags | includes: "obsidian" %}
 ### {{project.data.title}}
 
 {{project.data.summary}}
@@ -30,7 +30,7 @@ I maintain the following plugins for [Obsidian](https://obsidian.md/).
 I am the author of the following modules for [Foundry VTT](https://foundryvtt.com/).
 
 {% for project in allProjects %}
-{% if project.data.tags | find: "foundryvtt" %}
+{% if project.data.tags | includes: "foundryvtt" %}
 ### {{project.data.title}}
 
 {{project.data.summary}}

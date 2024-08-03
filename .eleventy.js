@@ -11,8 +11,10 @@ import output from "@11ty/eleventy-plugin-directory-output";
 import { shikiPlugin } from "./build/shiki-plugin.js";
 import RedirectsPlugin from "eleventy-plugin-redirects";
 import IconsPlugin from "eleventy-plugin-icons";
+import Filters from "./build/filters.js";
 
 const plugins = [
+  { plugin: Filters },
   { plugin: navigation },
   { plugin: InputPathToUrlTransformPlugin, options: { extensions: "html" } },
   { plugin: output },
@@ -40,57 +42,6 @@ export default defineConfig(function (config) {
     // @ts-expect-error - Types are just inaccurate for this
     config.addPlugin(plugin, options);
   }
-
-  config.addFilter(
-    "absolute",
-    function (value, base = "https://nathan-smith.org") {
-      return new URL(value, base).href;
-    }
-  );
-
-  // @ts-expect-error - This can return any value, not just a string
-  config.addFilter("keys", function (value) {
-    return Object.keys(value);
-  });
-
-  config.addFilter("activeRoute", function (value, baseRoute) {
-    if (
-      (baseRoute === "/" && value.length < 2) ||
-      (baseRoute !== "/" && value.startsWith(baseRoute))
-    ) {
-      return "active";
-    }
-    return "";
-  });
-
-  config.addFilter("projectStatusSort", function (value) {
-    if (!Array.isArray(value)) {
-      return value;
-    }
-    const copy = [...value];
-    const projectStatus = {
-      Active: 1,
-      Maintenance: 2,
-      Archived: 3,
-    };
-    copy.sort((a, b) => {
-      if (
-        projectStatus[a.data["project-status"]] &&
-        projectStatus[b.data["project-status"]]
-      ) {
-        return projectStatus[a.data["project-status"]] >
-          projectStatus[b.data["project-status"]]
-          ? 1
-          : -1;
-      } else if (projectStatus[a.data["project-status"]]) {
-        return 1;
-      } else if (projectStatus[b.data["project-status"]]) {
-        return -1;
-      }
-      return -1;
-    });
-    return copy;
-  });
 
   // Add markdown-it plugins
   config.amendLibrary("md", (mdLib) => {
