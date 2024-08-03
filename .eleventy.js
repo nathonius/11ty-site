@@ -41,6 +41,13 @@ export default defineConfig(function (config) {
     config.addPlugin(plugin, options);
   }
 
+  config.addFilter(
+    "absolute",
+    function (value, base = "https://nathan-smith.org") {
+      return new URL(value, base).href;
+    }
+  );
+
   // @ts-expect-error - This can return any value, not just a string
   config.addFilter("keys", function (value) {
     return Object.keys(value);
