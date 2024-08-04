@@ -37,7 +37,7 @@ doNotPublish: true
 This won't be published, but you can still add it to source control!
 ```
 
-When you're ready to publish, set `draft: false` or remove the property from metadata.
+When you're ready to publish, set `doNotPublish: false` or remove the property from metadata.
 
 ## How it works
 
@@ -61,3 +61,5 @@ export function draftsPlugin(config, options) {
 	});
 }
 ```
+
+You could also reverse it to add an opt-in publish key, only deploying files where it is true.
