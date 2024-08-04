@@ -1,1 +1,13 @@
+.post-title {
+    margin-bottom: 0;
+}
+
+.post-meta {
+    display: flex;
+    gap: var(--space-s);
+    opacity: 0.8;
+    padding-bottom: var(--space-s);
+    font-size: 1em;
+}
+
 {% include "css/numbered-headers.css" %}

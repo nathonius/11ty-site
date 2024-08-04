@@ -24,6 +24,14 @@ export default function (config) {
     return "";
   });
 
+  config.addFilter("without", function (value, match) {
+    if (!Array.isArray(value)) {
+      return value;
+    }
+    const _match = Array.isArray(match) ? match : [match];
+    return value.filter((v) => !_match.includes(v));
+  });
+
   config.addFilter("projectStatusSort", function (value) {
     if (!Array.isArray(value)) {
       return value;

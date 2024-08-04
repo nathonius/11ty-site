@@ -15,9 +15,11 @@ import { shikiPlugin } from "./build/shiki-plugin.js";
 import RedirectsPlugin from "eleventy-plugin-redirects";
 import IconsPlugin from "eleventy-plugin-icons";
 import Filters from "./build/filters.js";
+import Shortcodes from "./build/shortcodes.js";
 
 const plugins = [
   { plugin: Filters },
+  { plugin: Shortcodes },
   { plugin: navigation },
   { plugin: IdAttributePlugin },
   { plugin: InputPathToUrlTransformPlugin, options: { extensions: "html" } },
