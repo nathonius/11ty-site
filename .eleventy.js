@@ -1,7 +1,10 @@
 // @ts-check
 
 import CalloutPlugin from "markdown-it-obsidian-callouts";
-import { InputPathToUrlTransformPlugin } from "@11ty/eleventy";
+import {
+  InputPathToUrlTransformPlugin,
+  IdAttributePlugin,
+} from "@11ty/eleventy";
 import { defineConfig } from "11ty.ts";
 import { draftsPlugin } from "./build/drafts-plugin.js";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
@@ -16,6 +19,7 @@ import Filters from "./build/filters.js";
 const plugins = [
   { plugin: Filters },
   { plugin: navigation },
+  { plugin: IdAttributePlugin },
   { plugin: InputPathToUrlTransformPlugin, options: { extensions: "html" } },
   { plugin: output },
   { plugin: eleventyImageTransformPlugin, options: { extensions: "html" } },

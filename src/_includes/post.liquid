@@ -6,15 +6,18 @@
 <link rel="stylesheet" href="/post.css">
 {% endblock %}
 {% block sitecontent %}
-<div class="post-wrapper">
-  <h1>{{ title }}</h1>
-  <span>{{ date | date }}</span>
-  <div class="post-content">
-    {{ content }}
+<heading-anchors>
+  <div class="post-wrapper">
+    <h1>{{ title }}</h1>
+    <span>{{ date | date }}</span>
+    <div class="post-content">
+      {{ content }}
+    </div>
   </div>
-</div>
+</heading-anchors>
 {% endblock %}
 {% block postscripts %}
 {{ block.super }}
+<script src="/modules/heading-anchors.js"></script>
 <script type="module" src="/modules/copy-code.js"></script>
 {% endblock %}

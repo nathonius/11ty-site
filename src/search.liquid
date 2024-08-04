@@ -15,7 +15,7 @@ layout: home.liquid
 <script>
   window.addEventListener('DOMContentLoaded', (event) => {
     new PagefindUI({
-      element: '#search',
+      element: '#pagefind-search',
       showSubResults: true,
       showImages: false,
       translations: { placeholder: 'Search posts, pages, and projects' },
@@ -27,6 +27,6 @@ layout: home.liquid
 {% block sitecontent %}
 <h1>Search</h1>
 <div class="search-wrapper">
-  <div id="search"></div>
+  <div id="pagefind-search"></div>
 </div>
 {% endblock %}
