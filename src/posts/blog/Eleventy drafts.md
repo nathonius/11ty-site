@@ -30,7 +30,7 @@ Then in your template files, set the draft key:
 
 ```markdown
 ---
-draft: true
+doNotPublish: true
 ---
 # My draft
 
