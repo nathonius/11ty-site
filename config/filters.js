@@ -1,4 +1,4 @@
-export default function (config) {
+export function registerFilters(config) {
   config.addFilter(
     "absolute",
     function (value, base = "https://nathan-smith.org") {

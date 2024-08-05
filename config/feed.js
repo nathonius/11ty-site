@@ -1,12 +1,12 @@
 import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 
-export default function (config) {
+export function feed(config) {
   config.addPlugin(feedPlugin, {
     type: "atom",
     outputPath: "/feed.xml",
     collection: {
-      name: "post", // iterate over `collections.posts`
-      limit: 10, // 0 means no limit
+      name: "post",
+      limit: 10,
     },
     metadata: {
       language: "en",
