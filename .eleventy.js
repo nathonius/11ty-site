@@ -16,6 +16,7 @@ import RedirectsPlugin from "eleventy-plugin-redirects";
 import IconsPlugin from "eleventy-plugin-icons";
 import Filters from "./build/filters.js";
 import Shortcodes from "./build/shortcodes.js";
+import Feed from "./build/feed.js";
 
 const plugins = [
   { plugin: Filters },
@@ -41,6 +42,7 @@ const plugins = [
       ],
     },
   },
+  { plugin: Feed },
 ];
 
 export default defineConfig(function (config) {
