@@ -15,6 +15,7 @@ import { registerCss } from "./css.js";
 import { minifyHtml } from "./html.js";
 import { registerJsModules } from "./modules.js";
 import { icons } from "./icons.js";
+import { EleventyConfig } from "../11ty.js";
 
 const plugins = [
   { plugin: registerFilters },
@@ -34,7 +35,7 @@ const plugins = [
   { plugin: feed },
 ];
 
-export default function (config) {
+export default function (config: EleventyConfig) {
   for (const { plugin, options } of plugins) {
     config.addPlugin(plugin, options);
   }

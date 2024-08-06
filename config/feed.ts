@@ -1,6 +1,7 @@
 import { feedPlugin } from "@11ty/eleventy-plugin-rss";
+import { EleventyConfig } from "../11ty";
 
-export function feed(config) {
+export function feed(config: EleventyConfig) {
   config.addPlugin(feedPlugin, {
     type: "atom",
     outputPath: "/feed.xml",

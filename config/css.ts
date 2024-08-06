@@ -1,9 +1,10 @@
-import { runMode } from "./util.js";
+import { EleventyConfig } from "../11ty";
+import { runMode } from "./util";
 import { transform } from "lightningcss";
 import { Buffer } from "node:buffer";
 import path from "node:path";
 
-export function registerCss(config) {
+export function registerCss(config: EleventyConfig) {
   config.addTemplateFormats("css");
   config.addExtension("css", {
     key: "liquid",

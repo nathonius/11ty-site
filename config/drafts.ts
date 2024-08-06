@@ -1,4 +1,9 @@
-export function drafts(config, options) {
+import { EleventyConfig } from "../11ty";
+
+export function drafts(
+  config: EleventyConfig,
+  options?: { draftKey?: string; formats?: string }
+) {
   const opts = Object.assign(
     { draftKey: "draft", formats: "njk,md,liquid" },
     options
