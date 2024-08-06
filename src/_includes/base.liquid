@@ -16,22 +16,9 @@
       function getToggle() {
         return document.querySelector('button#theme-toggle');
       }
-      function updateEmoji(theme) {
-        const themeEmoji = getToggle()?.querySelector('#theme-emoji');
-        if (themeEmoji) {
-          if (theme === 'dark') {
-            themeEmoji.innerHTML = '🌙';
-            themeEmoji.ariaLabel = 'switch to light mode';
-          } else {
-            themeEmoji.innerHTML = '☀️';
-            themeEmoji.ariaLabel = 'switch to dark mode';
-          }
-        }
-      }
       function setTheme(theme, store) {
         const newTheme = theme ?? 'dark';
         document.documentElement.dataset.theme = newTheme;
-        updateEmoji(newTheme);
         if (store) {
           window.localStorage.setItem('prefers-theme', newTheme);
         }

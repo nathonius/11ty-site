@@ -5,5 +5,4 @@ if (toggle) {
       document.documentElement.dataset.theme === "dark" ? "light" : "dark";
     setTheme(newTheme, true);
   });
-  updateEmoji(document.documentElement.dataset.theme);
 }

@@ -9,5 +9,10 @@ export function icons(config) {
         default: true,
       },
     ],
+    icon: {
+      attributes: {
+        "aria-hidden": "true",
+      },
+    },
   });
 }

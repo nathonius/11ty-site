@@ -5,32 +5,60 @@
 {% endblock %}
 {% block content %}
 <div class="home-wrapper">
-  <nav class="site-nav">
-    <ul class="header-link-list">
-      <li><a id="nav-home" class="header-link {{ page.url | activeRoute: "/" }}" href="index.md">Home</a></li>
-      <li><a id="nav-blog" class="header-link {{ page.url | activeRoute: "/posts" }}" href="posts.md">Posts</a></li>
-      <li>
-        <a id="nav-projects" class="header-link {{ page.url | activeRoute: "/projects" }}" href="projects.md"
-          >Projects</a
+  <header>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <ul class="header-link-list">
+        <li><a class="header-link {{ page.url | activeRoute: "/" }}" href="index.md">Home</a></li>
+        <li><a class="header-link {{ page.url | activeRoute: "/posts" }}" href="posts.md">Posts</a></li>
+        <li>
+          <a
+            class="header-link {{ page.url | activeRoute: "/projects" }}"
+            href="projects.md"
+            >Projects</a
+          >
+        </li>
+        <li>
+          <a
+            class="bp-tablet-up header-link {{ page.url | activeRoute: "/contact" }}"
+            href="contact.md"
+            >Contact</a
+          >
+        </li>
+        <li>
+          <a class="bp-tablet-up header-link {{ page.url | activeRoute: "/search" }}" href="search.liquid">Search</a>
+        </li>
+      </ul>
+      <div class="header-right">
+        <a
+          id="search-icon"
+          href="search.liquid"
+          class="bp-phone-only icon-button {{ page.url | activeRoute: "/search" }}"
         >
-      </li>
-      <li>
-        <a id="nav-contact" class="header-link {{ page.url | activeRoute: "/contact" }}" href="contact.md">Contact</a>
-      </li>
-      <li>
-        <a id="nav-search" class="header-link {{ page.url | activeRoute: "/search" }}" href="search.liquid">Search</a>
-      </li>
-    </ul>
-    <button id="theme-toggle" type="button" aria-label="Toggle theme">
-      <span id="theme-emoji" aria-label="switch to light mode" role="img">🌙</span>
-    </button>
-  </nav>
+          <span class="sr-only">Search</span>
+          {% icon "search" %}
+        </a>
+        <button id="theme-toggle" type="button" class="icon-button" aria-label="Toggle theme">
+          <div id="theme-icon-dark" class="theme-icon" aria-label="switch to light mode" role="img">
+            {%- icon "moon" -%}
+          </div>
+          <div id="theme-icon-light" class="theme-icon" aria-label="switch to dark mode" role="img">
+            {%- icon "sun" -%}
+          </div>
+        </button>
+      </div>
+    </nav>
+  </header>
   <main class="site-content">
     {% block sitecontent %}
     {{ content }}
     {% endblock %}
   </main>
-  {% comment %} <button id="back-to-top" type="button">Back to top</button> {% endcomment %}
+  <footer>
+    <nav aria-label="Footer navigation">
+      <span>© {{ 'now' | date: '%Y' }} Nathan Smith</span>
+      <a href="contact.md">Contact</a>
+    </nav>
+  </footer>
 </div>
 {% endblock %}
 {% block postscripts %}
