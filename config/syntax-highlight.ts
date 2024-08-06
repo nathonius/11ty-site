@@ -1,4 +1,6 @@
 import Shiki from "@shikijs/markdown-it";
+import { EleventyConfig } from "../11ty";
+import MarkdownIt from "markdown-it";
 
 const shiki = await Shiki({
   themes: {
@@ -26,8 +28,8 @@ const shiki = await Shiki({
   ],
 });
 
-export function syntaxHighlight(config) {
-  config.amendLibrary("md", (mdLib) => {
+export function syntaxHighlight(config: EleventyConfig) {
+  config.amendLibrary("md", (mdLib: MarkdownIt) => {
     mdLib.use(shiki);
   });
 }

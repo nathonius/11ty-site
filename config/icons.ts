@@ -1,6 +1,7 @@
 import IconsPlugin from "eleventy-plugin-icons";
+import { EleventyConfig } from "../11ty";
 
-export function icons(config) {
+export function icons(config: EleventyConfig) {
   config.addPlugin(IconsPlugin, {
     sources: [
       {
@@ -9,6 +10,7 @@ export function icons(config) {
         default: true,
       },
     ],
+    // @ts-expect-error - type should be partial
     icon: {
       attributes: {
         "aria-hidden": "true",
