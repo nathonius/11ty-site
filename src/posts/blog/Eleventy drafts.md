@@ -2,7 +2,7 @@
 title: Managing drafts for Eleventy
 summary: Eleventy v3 includes a great new feature that supports draft documents
 date: 2024-08-01
-update_date: 
+update_date: 2024-08-05
 permalink: /posts/blog/eleventy-drafts/
 draft: false
 tags:
@@ -10,10 +10,10 @@ tags:
 ---
 The latest version of [Eleventy](https://www.11ty.dev/) v3 (`3.0.0-alpha.18` at time of writing) includes a new feature that it calls "preprocessors". Using these we can not only transform the content of a document, but exclude it entirely.
 
-If you just want the plugin, you can see the code [at my site's repo](https://github.com/nathonius/11ty-site/blob/main/build/drafts-plugin.js). Just import that into your Eleventy config and add the plugin:
+If you just want the plugin, you can see the code [at my site's repo](https://github.com/nathonius/11ty-site/blob/main/config/drafts.js). Just import that into your Eleventy config and add the plugin:
 
 ```js ; .eleventy.js
-import DraftsPlugin from './drafts-plugin.js';
+import DraftsPlugin from './drafts.js';
 
 export default function(eleventyConfig) {
 	// Use the default meta key and formats
