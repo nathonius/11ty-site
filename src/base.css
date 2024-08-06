@@ -3,3 +3,7 @@
 {% include "css/callouts.css" %}
 {% include "css/code.css" %}
 {% include "css/a11y.css" %}
+
+p {
+color: green !important;
+}

@@ -1,0 +1,22 @@
+{
+  "tasks": {
+    "serve": "deno run -A npm:@11ty/eleventy@3.0.0-beta.1 --serve --config=.eleventy.ts"
+  },
+  "imports": {
+    "@11ty/eleventy": "npm:@11ty/eleventy@^3.0.0-beta.1",
+    "@11ty/eleventy-img": "npm:@11ty/eleventy-img@^4.0.2",
+    "@11ty/eleventy-navigation": "npm:@11ty/eleventy-navigation@^0.3.5",
+    "@11ty/eleventy-plugin-directory-output": "npm:@11ty/eleventy-plugin-directory-output@^1.0.1",
+    "@11ty/eleventy-plugin-rss": "npm:@11ty/eleventy-plugin-rss@^2.0.2",
+    "@shikijs/markdown-it": "npm:@shikijs/markdown-it@^1.12.1",
+    "eleventy-plugin-icons": "npm:eleventy-plugin-icons@^4.5.0",
+    "eleventy-plugin-redirects": "npm:eleventy-plugin-redirects@^1.0.0",
+    "html-minifier": "npm:html-minifier@^4.0.0",
+    "lightningcss": "npm:lightningcss@^1.25.1",
+    "lucide-static": "npm:lucide-static@^0.424.0",
+    "markdown-it-obsidian-callouts": "npm:markdown-it-obsidian-callouts@^0.2.6",
+    "pagefind": "npm:pagefind@^1.1.0",
+    "through2": "npm:through2@^4.0.2",
+    "uglify-js": "npm:uglify-js@^3.19.1"
+  }
+}
