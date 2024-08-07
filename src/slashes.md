@@ -10,10 +10,10 @@ summary: Directory of all my slash pages
 
 All the software, tools, and equipment I use day-to-day.
 
-## [/til](/til)
+## [/til](/til.md)
 
 Today I learned... and now I'm sharing with you.
 
-## [/ai](/ai)
+## [/ai](/ai.md)
 
 How I use (and don't use) AI on this site and in general.
