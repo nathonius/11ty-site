@@ -1,5 +1,5 @@
 import { feedPlugin } from "@11ty/eleventy-plugin-rss";
-import { EleventyConfig } from "../11ty";
+import { EleventyConfig } from "../11ty.ts";
 
 export function feed(config: EleventyConfig) {
   config.addPlugin(feedPlugin, {

@@ -1,4 +1,4 @@
-import { EleventyConfig } from "../11ty";
+import { EleventyConfig } from "../11ty.ts";
 
 export function registerFilters(config: EleventyConfig) {
   config.addFilter(

@@ -1,6 +1,6 @@
 import { minify } from "html-minifier";
-import { runMode } from "./util.js";
-import { EleventyConfig } from "../11ty.js";
+import { runMode } from "./util.ts";
+import { EleventyConfig } from "../11ty.ts";
 
 export function minifyHtml(config: EleventyConfig) {
   config.addTransform("htmlmin", function (content, outputPath) {

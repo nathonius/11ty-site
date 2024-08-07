@@ -1,5 +1,5 @@
 import Shiki from "@shikijs/markdown-it";
-import { EleventyConfig } from "../11ty";
+import { EleventyConfig } from "../11ty.ts";
 import MarkdownIt from "markdown-it";
 
 const shiki = await Shiki({

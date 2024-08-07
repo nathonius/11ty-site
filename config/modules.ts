@@ -1,8 +1,8 @@
-import { runMode } from "./util.js";
+import { runMode } from "./util.ts";
 import { minify } from "uglify-js";
 import path from "node:path";
 import through from "through2";
-import { EleventyConfig } from "../11ty.js";
+import { EleventyConfig } from "../11ty.ts";
 
 export function registerJsModules(config: EleventyConfig) {
   config.addPassthroughCopy("src/modules", {

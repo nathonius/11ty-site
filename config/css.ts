@@ -1,5 +1,5 @@
-import { EleventyConfig } from "../11ty";
-import { runMode } from "./util";
+import { EleventyConfig } from "../11ty.ts";
+import { runMode } from "./util.ts";
 import { transform } from "lightningcss";
 import { Buffer } from "node:buffer";
 import path from "node:path";

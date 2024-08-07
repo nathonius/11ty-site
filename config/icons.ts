@@ -1,5 +1,5 @@
 import IconsPlugin from "eleventy-plugin-icons";
-import { EleventyConfig } from "../11ty";
+import { EleventyConfig } from "../11ty.ts";
 
 export function icons(config: EleventyConfig) {
   config.addPlugin(IconsPlugin, {

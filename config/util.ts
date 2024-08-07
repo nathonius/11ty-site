@@ -1,3 +1,3 @@
 export function runMode() {
-  return process.env.ELEVENTY_RUN_MODE ?? "build";
+  return Deno.env.get("ELEVENTY_RUN_MODE") ?? "build";
 }
