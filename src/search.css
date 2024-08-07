@@ -7,6 +7,8 @@
     border-radius: var(--space-xs);
     border: 2px solid color-mix(in srgb, var(--primary) 50%, transparent);
     outline: transparent;
+    /* For some reason pagefind applies a padding to the input, we override it here */
+    padding-right: 2px !important;
     &:focus-visible,
     &:focus {
       border-color: var(--primary);
