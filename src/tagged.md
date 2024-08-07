@@ -5,6 +5,8 @@ pagination:
   alias: tag
 permalink: /tagged/{{ tag }}/
 layout: home.liquid
+eleventyComputed:
+  title: Posts tagged {{tag}}
 ---
 
 <h1>Tagged “{{ tag }}”</h1>
