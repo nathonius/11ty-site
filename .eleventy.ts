@@ -1,7 +1,7 @@
 import CalloutPlugin from "markdown-it-obsidian-callouts";
+import type MarkdownIt from "markdown-it";
 import { defineConfig } from "./11ty";
 import registerPlugins from "./config/plugins";
-import MarkdownIt from "markdown-it";
 
 export default defineConfig(function (config) {
   registerPlugins(config);

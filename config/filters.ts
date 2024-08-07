@@ -1,22 +1,22 @@
-import { EleventyConfig } from "../11ty";
+import type { EleventyConfig } from "../11ty";
 
 export function registerFilters(config: EleventyConfig) {
   config.addFilter(
     "absolute",
-    function (value, base = "https://nathan-smith.org") {
+    function (value: string, base: string = "https://nathan-smith.org") {
       return new URL(value, base).href;
     }
   );
 
-  config.addFilter("includes", function (value, match) {
+  config.addFilter("includes", function (value: string[], match: string) {
     return Array.isArray(value) && value.includes(match);
   });
 
-  config.addFilter("keys", function (value) {
+  config.addFilter("keys", function (value: object) {
     return Object.keys(value);
   });
 
-  config.addFilter("activeRoute", function (value, baseRoute) {
+  config.addFilter("activeRoute", function (value: string, baseRoute: string) {
     if (
       (baseRoute === "/" && value.length < 2) ||
       (baseRoute !== "/" && value.startsWith(baseRoute))
@@ -26,13 +26,16 @@ export function registerFilters(config: EleventyConfig) {
     return "";
   });
 
-  config.addFilter("without", function (value, match) {
-    if (!Array.isArray(value)) {
-      return value;
+  config.addFilter(
+    "without",
+    function (value: string[], match: string | string[]) {
+      if (!Array.isArray(value)) {
+        return value;
+      }
+      const _match = Array.isArray(match) ? match : [match];
+      return value.filter((v) => !_match.includes(v));
     }
-    const _match = Array.isArray(match) ? match : [match];
-    return value.filter((v) => !_match.includes(v));
-  });
+  );
 
   type ProjectStatus = "Active" | "Maintenance" | "Archived";
   config.addFilter(

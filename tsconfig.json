@@ -105,6 +105,6 @@
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
     "skipLibCheck": true /* Skip type checking all .d.ts files. */
   },
-  "include": [".eleventy.ts", "config/**/*.ts", "types/"],
+  "include": [".eleventy.ts", "11ty.ts", "config/", "types/"],
   "exclude": ["node_modules", "public"]
 }

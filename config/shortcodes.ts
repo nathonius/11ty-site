@@ -1,4 +1,4 @@
-import { EleventyConfig } from "../11ty";
+import type { EleventyConfig } from "../11ty";
 
 export function registerShortcodes(config: EleventyConfig) {
   config.addShortcode(

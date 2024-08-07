@@ -1,8 +1,8 @@
-import { EleventyConfig } from "../11ty";
-import { runMode } from "./util";
-import { transform } from "lightningcss";
 import { Buffer } from "node:buffer";
 import path from "node:path";
+import { transform } from "lightningcss";
+import type { EleventyConfig } from "../11ty";
+import { runMode } from "./util";
 
 export function registerCss(config: EleventyConfig) {
   config.addTemplateFormats("css");

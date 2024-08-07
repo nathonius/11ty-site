@@ -1,8 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // Original source: https://github.com/panoply/e11ty/blob/master/plugins/11ty.ts/index.ts
 
+import type { Stream } from "node:stream";
 import type { Join, LiteralUnion } from "type-fest";
 import type { WatchOptions } from "chokidar";
-import { Stream } from "node:stream";
 
 type TemplateEngines = LiteralUnion<
   | "html"
@@ -57,7 +58,7 @@ interface PluginExtend {
    */
   addPlugin<
     Plugin extends EleventyPlugin,
-    PluginOptions extends GetPluginOptions<Plugin>
+    PluginOptions extends GetPluginOptions<Plugin>,
   >(
     plugin: Plugin,
     options?: PluginOptions

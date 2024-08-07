@@ -2,12 +2,13 @@ import {
   InputPathToUrlTransformPlugin,
   IdAttributePlugin,
 } from "@11ty/eleventy";
-import { drafts } from "./drafts.js";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import navigation from "@11ty/eleventy-navigation";
 import output from "@11ty/eleventy-plugin-directory-output";
-import { syntaxHighlight } from "./syntax-highlight.js";
 import RedirectsPlugin from "eleventy-plugin-redirects";
+import type { EleventyConfig } from "../11ty.js";
+import { drafts } from "./drafts.js";
+import { syntaxHighlight } from "./syntax-highlight.js";
 import { registerFilters } from "./filters.js";
 import { registerShortcodes } from "./shortcodes.js";
 import { feed } from "./feed.js";
@@ -15,7 +16,6 @@ import { registerCss } from "./css.js";
 import { minifyHtml } from "./html.js";
 import { registerJsModules } from "./modules.js";
 import { icons } from "./icons.js";
-import { EleventyConfig } from "../11ty.js";
 
 const plugins = [
   { plugin: registerFilters },
