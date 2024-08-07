@@ -4,6 +4,8 @@ title: Uses slash page
 summary: All the tools I use on a day-to-day basis
 ---
 
+# All the things that I use
+
 ## Editor + terminal
 
 - [Visual Studio Code](https://code.visualstudio.com/) is my primary editor.

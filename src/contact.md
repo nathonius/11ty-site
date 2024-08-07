@@ -6,7 +6,7 @@ aliases:
   - /where/
 ---
 
-## Contact
+# Contact
 
 For professional inquiries, you can reach me here:
 

@@ -6,11 +6,11 @@ summary: Thoughts on tech, life, and anything else.
 
 {% assign allPosts = collections['blog-post'] %}
 
-## Blog
+# Blog
 
 {% for post in allPosts | reverse %}
 
-### [{{post.data.title}}]({{post.page.url}})
+## [{{post.data.title}}]({{post.page.url}})
 
 {{post.data.summary}}
 

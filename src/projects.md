@@ -3,6 +3,8 @@ title: Projects
 layout: home.liquid
 summary: All the projects worked on by Nathan Smith.
 ---
+# Projects
+
 These are some projects I have created or worked on. Some are more maintained than others, but everything is open source and freely licensed, so please feel free to steal.
 
 ## Obsidian Plugins
