@@ -5,6 +5,8 @@ date: 2024-08-02
 update_date: 
 permalink: /posts/blog/the-best-new-css-function/
 draft: false
+tags:
+  - css
 ---
 It's `color-mix`. Check out the [MDN page](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix).
 
