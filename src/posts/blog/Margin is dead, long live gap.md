@@ -132,4 +132,4 @@ Try doing that with margin; you'll quickly find that it's nearly impossible to h
 
 ## When to use gap
 
-Any time you're trying to add space between multiple elements... use gap. It has enough adoption in 2024 that, unless you're still supporting IE11 for some reason, you can and should make use of it. Margin is still useful when you want space *around* and element (though spacing *within* and element should be handled with padding), or in situations where you can't use flexbox or grid layout, but those situations are few and far between. Gap has changed the way I write CSS and saved me hours of development time.
+Any time you're trying to add space between multiple elements... use gap. It has enough adoption in 2024 that, unless you're still supporting IE11 for some reason, you can and should make use of it. Margin is still useful when you want space *around* an element (though spacing *within* an element should be handled with padding), or in situations where you can't use flexbox or grid layout, but those situations are few and far between. Gap has changed the way I write CSS and saved me hours of development time.
