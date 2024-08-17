@@ -10,7 +10,6 @@ export function icons(config: EleventyConfig) {
         default: true,
       },
     ],
-    // @ts-expect-error - type should be partial
     icon: {
       attributes: {
         "aria-hidden": "true",

@@ -37,7 +37,7 @@
     "@11ty/eleventy-plugin-directory-output": "^1.0.1",
     "@11ty/eleventy-plugin-rss": "^2.0.2",
     "@shikijs/markdown-it": "^1.10.3",
-    "eleventy-plugin-icons": "^4.5.0",
+    "eleventy-plugin-icons": "^4.5.1",
     "eleventy-plugin-redirects": "^1.0.0",
     "html-minifier": "^4.0.0",
     "lightningcss": "^1.25.1",
