@@ -10,7 +10,7 @@ tags:
 ---
 If [the best new CSS function](The%20best%20new%20CSS%20function.md) is `color-mix`, then the best CSS property added in the last ten years is `gap`.
 
-# Margin hacks begone
+## Margin hacks begone
 
 Creating non-linear HTML layouts was difficult for most of CSS's life; HTML was originally only intended to represent documents and CSS was just a way to lay out the document. We have a "margin" property today because we had margins on printed documents. Even the way [flow layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flow_layout) and its positioning modes work comes from documents: paragraphs are blocks, items within a paragraph are inline. Even the "float" property calls to mind positioning an image within a typed report.
 
@@ -18,7 +18,7 @@ When fledgling web designers wanted to break outside of the strict, linear bound
 
 But even with flexbox, it took the often underutilized, sometimes overlooked [grid layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout) to truly move the web past using outdated layout methods with the introduction of the `row-gap` and `column-gap` properties.
 
-## Gap for layout, margin for text
+### Gap for layout, margin for text
 
 So maybe margin isn't dead, but I almost never reach for it anymore when doing any sort of page layout. Gap is just better. Consider the following, where I want to add space between each card element in a row, but have the cards butt up against the container at the edges. Here's an example using margin:
 
@@ -130,6 +130,6 @@ Two lines! That's all it takes. The parent lays out its children. Gap proves its
 
 Try doing that with margin; you'll quickly find that it's nearly impossible to have a responsive grid with spaced items without JavaScript or fixed widths.
 
-## When to use gap
+### When to use gap
 
 Any time you're trying to add space between multiple elements... use gap. It has enough adoption in 2024 that, unless you're still supporting IE11 for some reason, you can and should make use of it. Margin is still useful when you want space *around* an element (though spacing *within* an element should be handled with padding), or in situations where you can't use flexbox or grid layout, but those situations are few and far between. Gap has changed the way I write CSS and saved me hours of development time.

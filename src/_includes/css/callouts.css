@@ -2,7 +2,7 @@ div.callout {
   width: 100%;
   padding: var(--space-m);
   border-radius: var(--space-s);
-  background-color: var(--surface-2);
+  background-color: var(--surface0);
   display: flex;
   flex-direction: column;
   gap: var(--space-m);
@@ -30,10 +30,10 @@ div.callout {
   &[data-callout="note"] {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-    border-left: var(--space-xs) solid var(--primary);
+    border-left: var(--space-xs) solid var(--accent4);
 
     .callout-title {
-      color: var(--primary);
+      color: var(--accent4);
     }
   }
 }

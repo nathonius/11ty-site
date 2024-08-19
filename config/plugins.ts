@@ -6,6 +6,7 @@ import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import navigation from "@11ty/eleventy-navigation";
 import output from "@11ty/eleventy-plugin-directory-output";
 import RedirectsPlugin from "eleventy-plugin-redirects";
+import emoji from "eleventy-plugin-emoji";
 import type { EleventyConfig } from "../11ty.js";
 import { drafts } from "./drafts.js";
 import { syntaxHighlight } from "./syntax-highlight.js";
@@ -33,6 +34,7 @@ const plugins = [
   { plugin: RedirectsPlugin, options: { template: "netlify" } },
   { plugin: icons },
   { plugin: feed },
+  { plugin: emoji },
 ];
 
 export default function (config: EleventyConfig) {

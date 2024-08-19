@@ -32,3 +32,8 @@ declare module "@11ty/eleventy-plugin-directory-output" {
   const plugin: Plugin;
   export default plugin;
 }
+declare module "eleventy-plugin-emoji" {
+  type Plugin = import("../11ty").EleventyPlugin;
+  const plugin: Plugin;
+  export default plugin;
+}

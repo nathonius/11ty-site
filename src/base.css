@@ -1,5 +1,7 @@
 {% include "css/normalize.css" %}
+{% include "css/catppuccin.css" %}
 {% include "css/base.css" %}
 {% include "css/callouts.css" %}
 {% include "css/code.css" %}
 {% include "css/a11y.css" %}
+{% include "css/tooltip.css" %}

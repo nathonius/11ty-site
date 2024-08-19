@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="frappe">
   <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,27 +12,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{ summary }}">
-    <script>
-      function getToggle() {
-        return document.querySelector('button#theme-toggle');
-      }
-      function setTheme(theme, store) {
-        const newTheme = theme ?? 'dark';
-        document.documentElement.dataset.theme = newTheme;
-        if (store) {
-          window.localStorage.setItem('prefers-theme', newTheme);
-        }
-      }
-
-      let theme = 'dark';
-      const preference = window.localStorage.getItem('prefers-theme');
-      if (preference) {
-        theme = preference;
-      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-        theme = 'light';
-      }
-      setTheme(theme);
-    </script>
     {% block prescripts %}
     {% endblock %}
     {% block styles %}
