@@ -20,11 +20,13 @@ div.home-wrapper {
     a.header-link {
       display: block;
       padding: var(--link-padding);
-      transition: box-shadow 0.2s, color 0.2s;
+      transition:
+        box-shadow 0.2s,
+        color 0.2s;
       border-radius: var(--space-s);
 
       &.active {
-        color: var(--secondary);
+        color: var(--accent2);
       }
 
       &:hover,
@@ -32,7 +34,7 @@ div.home-wrapper {
         outline: none;
         text-decoration: none;
         box-shadow: 0px 4px 20px 2px
-          color-mix(in srgb, var(--secondary) 25%, transparent);
+          color-mix(in srgb, var(--accent2) 25%, transparent);
       }
     }
 
@@ -59,25 +61,14 @@ div.home-wrapper {
       gap: 1rem;
       align-items: center;
       #search-icon.active {
-        color: var(--secondary);
+        color: var(--accent2);
       }
-    }
-
-    button#theme-toggle {
-      display: block;
-      cursor: pointer;
-      background: transparent;
-      border: none;
-      padding: 0;
-      color: var(--primary);
-      &:hover,
-      &:focus {
-        color: var(--secondary);
-      }
-
-      .theme-icon {
-        width: var(--icon-m);
-        height: var(--icon-m);
+      button.icon-button {
+        padding: 0;
+        display: block;
+        background: transparent;
+        border: none;
+        cursor: pointer;
       }
     }
   }
@@ -96,7 +87,7 @@ div.home-wrapper {
     font-size: 0.8em;
     &,
     a {
-      color: color-mix(in srgb, var(--text) 50%, transparent);
+      color: var(--subtle);
     }
     a {
       text-decoration: underline;
@@ -117,13 +108,27 @@ div.home-wrapper {
   }
 }
 
-html[data-theme="dark"] {
-  #theme-icon-light {
-    display: none;
+button#theme-toggle .eleventy-emoji {
+  display: none;
+}
+
+html[data-theme="mocha"] {
+  button#theme-toggle .eleventy-emoji[aria-label="mocha theme"] {
+    display: block;
   }
 }
-html[data-theme="light"] {
-  #theme-icon-dark {
-    display: none;
+html[data-theme="macchiato"] {
+  button#theme-toggle .eleventy-emoji[aria-label="macchiato theme"] {
+    display: block;
+  }
+}
+html[data-theme="frappe"] {
+  button#theme-toggle .eleventy-emoji[aria-label="frappe theme"] {
+    display: block;
+  }
+}
+html[data-theme="latte"] {
+  button#theme-toggle .eleventy-emoji[aria-label="latte theme"] {
+    display: block;
   }
 }

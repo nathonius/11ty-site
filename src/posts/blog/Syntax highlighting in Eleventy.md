@@ -47,7 +47,7 @@ Then we just add the plugin to the Eleventy config:
 import ShikiPlugin from './shiki-plugin.js';
 
 export default function(eleventyConfig) {
-	eleventyConfig.addPlugin(ShikiPlugin);
+    eleventyConfig.addPlugin(ShikiPlugin);
 };
 ```
 
@@ -79,7 +79,7 @@ export default function shikiPlugin(config) {
 
 Our code block looks great! Except, oh no, we have a codeblock with one really long line of text and it's flying out of its container...
 
-![](attachments/codeblock-overflow.png)
+![codeblock overflow](attachments/codeblock-overflow.png)
 
 There are two strategies to fix this problem:
 
@@ -90,7 +90,7 @@ Check out the css-tricks article [Styling Code In and Out of Blocks](https://css
 
 ```css
 pre {
-	overflow: auto;
+    overflow: auto;
 }
 ```
 
@@ -110,12 +110,12 @@ The transformer is straightforward:
 
 ```js ; shiki-plugin.js
 const shiki = await Shiki({
-	theme: "vitesse-dark",
-	transformers: [{
-		pre: function () {
-			this.pre.properties.dataLang = this.options.lang;
-		}
-	}]
+    theme: "vitesse-dark",
+    transformers: [{
+        pre: function () {
+            this.pre.properties.dataLang = this.options.lang;
+        }
+    }]
 });
 ```
 
@@ -125,21 +125,21 @@ Now we need the script to add the buttons:
 
 ```js
 function copyCodeToClipboard(pre) {
-	const code = codeblock.firstChild?.innerText ?? '';
-	navigator.clipboard.writeText(code);
+    const code = codeblock.firstChild?.innerText ?? '';
+    navigator.clipboard.writeText(code);
 }
 
 function addCopyCodeButton(pre) {
-	const button = document.createElement("button");
-	button.type = "button";
-	button.innerText = pre.dataset.lang ?? "copy";
-	button.addEventListener("click", () => copyCodeToClipboard(pre));
-	pre.appendChild(button);
+    const button = document.createElement("button");
+    button.type = "button";
+    button.innerText = pre.dataset.lang ?? "copy";
+    button.addEventListener("click", () => copyCodeToClipboard(pre));
+    pre.appendChild(button);
 }
 
 const codeblocks = document.querySelectorAll("pre");
 for (const pre of codeblocks) {
-	addCopyCodeButton(pre);
+    addCopyCodeButton(pre);
 }
 ```
 
@@ -147,12 +147,12 @@ And some CSS to position the button:
 
 ```css
 pre {
-	position: relative;
+    position: relative;
 }
 pre > button {
-	position: absolute;
-	top: 0.5rem;
-	right: 0.5rem;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
 }
 ```
 
@@ -164,21 +164,21 @@ Finally, we may want to show a filename along with a codeblock, which we will do
 
 ```js ; shiki-plugin.js
 const shiki = await Shiki({
-	theme: "vitesse-dark",
-	transformers: [{
-		pre: function () {
-			this.pre.properties.dataLang = this.options.lang;
-	        const filenameMeta = this.options.meta?.__raw ?? "";
-	        if (
-		        filenameMeta &&
-		        filenameMeta.startsWith("; ") &&
-		        filenameMeta.length > 2
-	        ) {
-				const filename = filenameMeta.slice(2);
-		        this.pre.properties.dataFile = filename;
-	        }
-		}
-	}]
+    theme: "vitesse-dark",
+    transformers: [{
+        pre: function () {
+            this.pre.properties.dataLang = this.options.lang;
+            const filenameMeta = this.options.meta?.__raw ?? "";
+            if (
+                filenameMeta &&
+                filenameMeta.startsWith("; ") &&
+                filenameMeta.length > 2
+            ) {
+                const filename = filenameMeta.slice(2);
+                this.pre.properties.dataFile = filename;
+            }
+        }
+    }]
 });
 ```
 
@@ -187,11 +187,11 @@ The transformer looks for a specific syntax for filenames in Markdown codeblocks
 ````markdown
 ```js ; shiki-plugin.js
 const shiki = await Shiki({
-	theme: "vitesse-dark",
-	transformers: [{
-		pre: function () {
-			this.pre.properties.dataLang = this.options.lang;
-	        const filenameMeta = this.options.meta?.__raw ?? "";
+    theme: "vitesse-dark",
+    transformers: [{
+        pre: function () {
+            this.pre.properties.dataLang = this.options.lang;
+            const filenameMeta = this.options.meta?.__raw ?? "";
 ```
 ````
 
@@ -202,8 +202,8 @@ Now, we can add the filename to `pre` blocks using only some CSS:
 
 ```css
 pre[data-file]::before {
-	content: attr(data-file);
-	display: block;
+    content: attr(data-file);
+    display: block;
 }
 ```
 

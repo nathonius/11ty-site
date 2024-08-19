@@ -1,8 +1,9 @@
-const toggle = getToggle();
-if (toggle) {
-  toggle.addEventListener("click", () => {
-    const newTheme =
-      document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+const themeToggle = getToggle();
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    const themeIndex =
+      themes.indexOf(document.documentElement.dataset.theme) ?? -1;
+    const newTheme = themes[(themeIndex + 1) % 4];
     setTheme(newTheme, true);
   });
 }

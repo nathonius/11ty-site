@@ -16,15 +16,15 @@ CSS variables give us a ton of power, but they have some important limitations. 
 
 ```css
 :root {
-	--color-text: black;
-	--color-bg: white;
-	--color-primary: #114b5f;
-	--color-secondary: #456990;
+    --color-text: black;
+    --color-bg: white;
+    --color-primary: #114b5f;
+    --color-secondary: #456990;
 }
 
 .semi-transparent-primary-element {
-	/* this should have 0.8 alpha */
-	color: var(--color-primary);
+    /* this should have 0.8 alpha */
+    color: var(--color-primary);
 }
 ```
 
@@ -32,21 +32,21 @@ How do we set the alpha channel on the primary color for the `.semi-transparent-
 
 ```css
 :root {
-	/* as triplet */
-	--color-primary-rgb: 17, 75, 95;
-	--color-primary: rgb(var(--color-primary));
-	/* individual values */
-	--color-secondary-r: 69;
-	--color-secondary-g: 105;
-	--color-secondary-b: 144;
-	--color-secondary: rgb(var(--color-secondary-r), var(--color-secondary-g), var(--color-secondary-b));
+    /* as triplet */
+    --color-primary-rgb: 17, 75, 95;
+    --color-primary: rgb(var(--color-primary));
+    /* individual values */
+    --color-secondary-r: 69;
+    --color-secondary-g: 105;
+    --color-secondary-b: 144;
+    --color-secondary: rgb(var(--color-secondary-r), var(--color-secondary-g), var(--color-secondary-b));
 }
 
 .semi-transparent-primary-element {
-	/* this works */
-	color: rgba(var(--color-primary-rgb), 0.8);
-	/* this works, but at what cost */
-	color: rgba(var(--color-secondary-r), var(--color-secondary-g), var(--color-secondary-b), 0.8);
+    /* this works */
+    color: rgba(var(--color-primary-rgb), 0.8);
+    /* this works, but at what cost */
+    color: rgba(var(--color-secondary-r), var(--color-secondary-g), var(--color-secondary-b), 0.8);
 }
 ```
 
@@ -58,14 +58,14 @@ We don't have to do this anymore. Sure, there are other usecases for defining ea
 
 ```css
 :root {
-	--color-text: black;
-	--color-bg: white;
-	--color-primary: #114b5f;
-	--color-secondary: #456990;
+    --color-text: black;
+    --color-bg: white;
+    --color-primary: #114b5f;
+    --color-secondary: #456990;
 }
 
 .semi-transparent-primary-element {
-	color: color-mix(in srgb, var(--color-primary) 80%, transparent);
+    color: color-mix(in srgb, var(--color-primary) 80%, transparent);
 }
 ```
 

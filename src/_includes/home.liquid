@@ -1,4 +1,33 @@
 {%- layout 'base.liquid' -%}
+{% block prescripts %}
+{{ block.super }}
+<script>
+  const themes = ['mocha', 'macchiato', 'frappe', 'latte'];
+  function getToggle() {
+    return document.querySelector('button#theme-toggle');
+  }
+  function setTheme(theme, store) {
+    const newTheme = theme ?? 'frappe';
+    document.documentElement.dataset.theme = newTheme;
+    if (store) {
+      window.localStorage.setItem('prefers-theme', newTheme);
+    }
+    window.requestIdleCallback(() => {
+      const themeName = document.querySelector('#theme-name');
+      themeName.dataset.hint = `${newTheme} theme`;
+    });
+  }
+
+  let theme = 'frappe';
+  const themePreference = window.localStorage.getItem('prefers-theme');
+  if (themePreference && themes.includes(themePreference)) {
+    theme = themePreference;
+  } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+    theme = 'latte';
+  }
+  setTheme(theme);
+</script>
+{% endblock %}
 {% block styles %}
 {{ block.super }}
 <link rel="stylesheet" href="/home.css">
@@ -38,12 +67,12 @@
           {% icon "search" %}
         </a>
         <button id="theme-toggle" type="button" class="icon-button" aria-label="Toggle theme">
-          <div id="theme-icon-dark" class="theme-icon" aria-label="switch to light mode" role="img">
-            {%- icon "moon" -%}
-          </div>
-          <div id="theme-icon-light" class="theme-icon" aria-label="switch to dark mode" role="img">
-            {%- icon "sun" -%}
-          </div>
+          <span id="theme-name" class="hint--bottom" data-hint="mocha-theme">
+            {{ '🌿' | emoji: 'mocha theme' }}
+            {{ '🌺' | emoji: 'macchiato theme' }}
+            {{ '🪴' | emoji: 'frappe theme' }}
+            {{ '🌻' | emoji: 'latte theme' }}
+          </span>
         </button>
       </div>
     </nav>

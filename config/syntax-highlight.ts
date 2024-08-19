@@ -4,9 +4,12 @@ import type { EleventyConfig } from "../11ty";
 
 const shiki = await Shiki({
   themes: {
-    light: "vitesse-light",
-    dark: "vitesse-dark",
+    mocha: "catppuccin-mocha",
+    macchiato: "catppuccin-macchiato",
+    frappe: "catppuccin-frappe",
+    latte: "catppuccin-latte",
   },
+  defaultColor: false,
   transformers: [
     {
       pre: function () {

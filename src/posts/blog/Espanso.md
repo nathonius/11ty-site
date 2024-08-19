@@ -10,6 +10,7 @@ permalink: "/posts/blog/espanso/"
 ## Setup
 
 Espanso is very configurable; the config can be as simple as a single yaml file or as complicated as multiple root yaml files that conditionally include other files along with scripts. [Espanso's docs](https://espanso.org/docs/get-started/) are great, but you can view [my espanso config and matches](https://github.com/nathonius/dotfiles/tree/main/espanso) in my dotfiles repo.
+
 ## My matches
 
 The following are matches I use to speed up certain workflow tasks.
@@ -86,6 +87,7 @@ matches:
         params:
           cmd: "lorem"
 ```
+
 ### Dev
 
 VS Code is my primary editor and supports snippets out the box, but I find a universal, application agnostic solution works best. So, I keep various development-related snippets in Espanso as well.
