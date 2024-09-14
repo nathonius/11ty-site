@@ -23,7 +23,7 @@ You'll need access to [Libby] through your library; Libby setup is out of the sc
 You should get a code that is valid for 60 seconds, which will rotate to a new code when time expires. On your phone, navigate to the Menu tab and scroll down until you find an option labeled "Copy To Another Device".
 
 ![Display Setup Code](./attachments/SetupCode.png)
-![Copy to Another Device](./attachments/Recover%20Your%20Data.png)
+![Copy to Another Device](attachments/RecoverYourData.png)
 
 Once able, input the setup code on your phone, and your desktop browser will be logged in.
 
