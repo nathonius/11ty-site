@@ -1,8 +1,8 @@
 ---
 title: Use IDKFA music with GZDoom
 summary: The new release of Doom + Doom 2 is great, but how do you use Andrew Hulshult's version of the OST with GZDoom?
-date: 
-update_date: 
+date: 2024-08-31
+update_date: 2024-08-31
 permalink: /posts/til/use-idkfa-music-with-gzdoom/
 draft: false
 ---

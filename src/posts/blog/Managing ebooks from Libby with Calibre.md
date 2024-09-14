@@ -1,8 +1,8 @@
 ---
 title: Managing ebooks from Libby with Calibre
 summary: Libby / Overdrive is a great way to get books from your local library; Calibre is the best way to manage them all.
-date: 
-update_date: 
+date: 2024-09-13
+update_date: 2024-09-13
 permalink: /posts/blog/managing-ebooks-from-libby-with-calibre/
 draft: false
 tags:
