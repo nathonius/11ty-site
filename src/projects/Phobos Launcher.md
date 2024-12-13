@@ -1,7 +1,7 @@
 ---
 tags:
   - project
-  - doom
+  - boomer-shooter
 summary: A fancy, cross platform launcher for Doom and its descendants
 github-link: https://github.com/nathonius/phobos-launcher
 project-link: https://github.com/nathonius/phobos-launcher/releases
