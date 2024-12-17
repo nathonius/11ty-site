@@ -1,57 +1,21 @@
 {
-  "name": "site",
+  "name": "eleventy-tsx",
   "version": "1.0.0",
-  "main": "index.js",
-  "type": "module",
+  "description": "",
   "scripts": {
-    "eleventy": "tsx ./node_modules/@11ty/eleventy/cmd.cjs --config=.eleventy.ts",
-    "serve": "npm run eleventy -- --serve",
-    "build": "npm run eleventy && npm run index",
-    "index": "pagefind --site \"public\" --glob \"**/*.html\""
+    "build": "tsx node_modules/@11ty/eleventy/cmd.cjs --config=eleventy.config.ts",
+    "start": "tsx node_modules/@11ty/eleventy/cmd.cjs --config=eleventy.config.ts --serve --incremental"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
-  "devDependencies": {
-    "@eslint/js": "^9.17.0",
-    "@types/html-minifier": "^4.0.5",
-    "@types/markdown-it": "^14.1.2",
-    "@types/node": "^20.14.10",
-    "@types/through2": "^2.0.41",
-    "chokidar": "^3.6.0",
-    "eslint": "^9.17.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-import": "^2.31.0",
-    "eslint-plugin-unused-imports": "^4.1.4",
-    "prettier": "^3.4.2",
-    "tsx": "^4.19.2",
-    "type-fest": "^4.30.2",
-    "typescript": "^5.7.2",
-    "typescript-eslint": "^8.18.1"
-  },
+  "type": "module",
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",
-    "@11ty/eleventy-img": "^5.0.0",
-    "@11ty/eleventy-navigation": "^0.3.5",
-    "@11ty/eleventy-plugin-directory-output": "^1.0.1",
-    "@11ty/eleventy-plugin-rss": "^2.0.2",
-    "@catppuccin/palette": "^1.7.0",
-    "@shikijs/markdown-it": "^1.24.2",
-    "eleventy-plugin-emoji": "^1.1.0",
-    "eleventy-plugin-icons": "^4.5.1",
-    "eleventy-plugin-redirects": "^1.0.0",
-    "html-minifier": "^4.0.0",
-    "lightningcss": "^1.28.2",
-    "lucide-static": "^0.468.0",
-    "markdown-it-obsidian-callouts": "^0.3.1",
-    "pagefind": "^1.2.0",
-    "through2": "^4.0.2",
-    "uglify-js": "^3.19.3"
+    "jsx-async-runtime": "^0.6.2"
   },
-  "overrides": {
-    "eslint-plugin-import": {
-      "eslint": "$eslint"
-    }
+  "devDependencies": {
+    "prettier": "^3.4.2",
+    "tsx": "^4.19.2"
   }
 }
