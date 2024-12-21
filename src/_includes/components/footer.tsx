@@ -1,4 +1,4 @@
-export function Footer(): JSX.Element {
+export function Footer() {
   const absolute = (
     value: string,
     base: string = "https://nathan-smith.org"

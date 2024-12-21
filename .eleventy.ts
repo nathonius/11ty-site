@@ -1,6 +1,7 @@
 import CalloutPlugin from "markdown-it-obsidian-callouts";
 import type MarkdownIt from "markdown-it";
 import { jsxToString } from "jsx-async-runtime";
+import { render } from "preact-render-to-string";
 import type { JavaScriptTemplate, TSXProps } from "./11ty";
 import { defineConfig } from "./11ty";
 import registerPlugins from "./config/plugins";
@@ -10,8 +11,11 @@ export default defineConfig(function (config) {
 
   config.addExtension("11ty.tsx", {
     compile: async (_, path: string) => {
-      const module = (await import(path)) as JavaScriptTemplate;
-      return async (props: TSXProps) => await jsxToString(module.render(props));
+      const module = (await import(path)) as any;
+      return (props: TSXProps) => {
+        const result = render(module.default(props));
+        return result;
+      };
     },
     useJavaScriptImport: true,
     outputFileExtension: "html",

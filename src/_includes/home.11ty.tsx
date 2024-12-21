@@ -1,3 +1,4 @@
+import type { FunctionComponent } from "preact";
 import type { TSXProps } from "../../11ty";
 import { Boilerplate } from "./components/boilerplate";
 import { Footer } from "./components/footer";
@@ -28,14 +29,14 @@ const daScript = `const themes = ['mocha', 'macchiato', 'frappe', 'latte'];
   }
   setTheme(theme);`;
 
-export function Home(props: TSXProps): JSX.Element {
+export const Home: FunctionComponent<TSXProps> = (props: TSXProps) => {
   const { title, content, page } = props;
 
   return (
     <html lang="en" data-theme="frappe">
       <head>
         <Boilerplate />
-        <script>{daScript}</script>
+        <script dangerouslySetInnerHTML={{ __html: daScript }}></script>
         <link rel="stylesheet" href="/base.css" />
         <link rel="stylesheet" href="/home.css" />
         <title>{title}</title>
@@ -43,13 +44,15 @@ export function Home(props: TSXProps): JSX.Element {
       <body>
         <div class="home-wrapper">
           <Header url={page.url} />
-          <main class="site-content">{content}</main>
+          <main class="site-content">
+            <div dangerouslySetInnerHTML={{ __html: content }}></div>
+          </main>
           <Footer />
         </div>
       </body>
       <script type="module" src="/modules/theme-toggle.js"></script>
     </html>
   );
-}
+};
 
-export const render = Home;
+export default Home;

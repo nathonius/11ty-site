@@ -1,8 +1,9 @@
+import type { FunctionComponent } from "preact";
 import type { TSXProps } from "../../11ty";
 import { Boilerplate } from "./components/boilerplate";
 
-export function Base(props: TSXProps): JSX.Element {
-  const { title, content } = props;
+export const Base: FunctionComponent<TSXProps> = (props) => {
+  const { title, content, children } = props;
   return (
     <html lang="en" data-theme="frappe">
       <head>
@@ -10,9 +11,12 @@ export function Base(props: TSXProps): JSX.Element {
         <link rel="stylesheet" href="/base.css" />
         <title>{title}</title>
       </head>
-      <body>{content}</body>
+      <body>
+        {content && <div dangerouslySetInnerHTML={{ __html: content }}></div>}
+        {children}
+      </body>
     </html>
   );
-}
+};
 
-export const render = Base;
+export default Base;

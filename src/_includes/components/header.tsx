@@ -1,7 +1,7 @@
 import { Emoji } from "./emoji";
 import { Icon } from "./icon";
 
-export function Header(props: { url: string }): JSX.Element {
+export function Header(props: { url: string }) {
   const { url } = props;
   const activeRoute = (
     value: string,
@@ -71,10 +71,10 @@ export function Header(props: { url: string }): JSX.Element {
             aria-label="Toggle theme"
           >
             <span id="theme-name" class="hint--bottom" data-hint="mocha-theme">
-              <Emoji value="🌿" label="mocha theme" />
-              <Emoji value="🌺" label="macchiato theme" />
-              <Emoji value="🪴" label="frappe theme" />
-              <Emoji value="🌻" label="latte theme" />
+              <Emoji label="mocha theme">🌿</Emoji>
+              <Emoji label="macchiato theme">🌺</Emoji>
+              <Emoji label="frappe theme">🪴</Emoji>
+              <Emoji label="latte theme">🌻</Emoji>
             </span>
           </button>
         </div>

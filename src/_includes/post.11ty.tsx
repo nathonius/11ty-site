@@ -1,3 +1,4 @@
+import type { FunctionComponent } from "preact";
 import type { TSXProps } from "../../11ty";
 import { Boilerplate } from "./components/boilerplate";
 import { Footer } from "./components/footer";
@@ -28,7 +29,7 @@ const daScript = `const themes = ['mocha', 'macchiato', 'frappe', 'latte'];
   }
   setTheme(theme);`;
 
-export function Post(props: TSXProps): JSX.Element {
+export const Post: FunctionComponent<TSXProps> = (props: TSXProps) => {
   const { title, content, page, summary } = props;
 
   return (
@@ -41,7 +42,7 @@ export function Post(props: TSXProps): JSX.Element {
         <meta property="og:description" content={summary} />
         {/* <meta property="og:article:published_time" content="{{ date | date_to_xmlschema }}"> */}
         <meta property="og:article:author" content="Nathan Smith"></meta>
-        <script>{daScript}</script>
+        <script dangerouslySetInnerHTML={{ __html: daScript }}></script>
         <link rel="stylesheet" href="/base.css" />
         <link rel="stylesheet" href="/home.css" />
         <link rel="stylesheet" href="/post.css" />
@@ -51,26 +52,28 @@ export function Post(props: TSXProps): JSX.Element {
         <div class="home-wrapper">
           <Header url={page.url} />
           <main class="site-content">
-            <heading-anchors>
-              <div class="post-wrapper">
-                <h1 class="post-title">{title}</h1>
-                <div class="post-meta">
-                  <span>{new Date().toLocaleDateString()}</span>
-                  <span aria-hidden="true">/</span>
-                  <span>tagged: (some tags)</span>
-                </div>
-                <div class="post-content">{content}</div>
+            {/* <heading-anchors> */}
+            <div class="post-wrapper">
+              <h1 class="post-title">{title}</h1>
+              <div class="post-meta">
+                <span>{new Date().toLocaleDateString()}</span>
+                <span aria-hidden="true">/</span>
+                <span>tagged: (some tags)</span>
               </div>
-            </heading-anchors>
+              <div class="post-content">
+                <div dangerouslySetInnerHTML={{ __html: content }}></div>
+              </div>
+            </div>
+            {/* </heading-anchors> */}
           </main>
           <Footer />
         </div>
       </body>
       <script type="module" src="/modules/theme-toggle.js"></script>
-      <script src="/modules/heading-anchors.js"></script>
+      {/* <script src="/modules/heading-anchors.js"></script> */}
       <script type="module" src="/modules/copy-code.js"></script>
     </html>
   );
-}
+};
 
-export const render = Post;
+export default Post;
