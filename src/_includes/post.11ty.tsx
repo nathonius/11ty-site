@@ -3,6 +3,7 @@ import type { TSXProps } from "../../11ty";
 import { Boilerplate } from "./components/boilerplate";
 import { Footer } from "./components/footer";
 import { Header } from "./components/header";
+import { PostTags } from "./components/post-tags";
 
 const daScript = `const themes = ['mocha', 'macchiato', 'frappe', 'latte'];
   function getToggle() {
@@ -30,7 +31,7 @@ const daScript = `const themes = ['mocha', 'macchiato', 'frappe', 'latte'];
   setTheme(theme);`;
 
 export const Post: FunctionComponent<TSXProps> = (props: TSXProps) => {
-  const { title, content, page, summary } = props;
+  const { title, content, page, summary, tags } = props;
 
   return (
     <html lang="en" data-theme="frappe">
@@ -58,7 +59,9 @@ export const Post: FunctionComponent<TSXProps> = (props: TSXProps) => {
               <div class="post-meta">
                 <span>{new Date().toLocaleDateString()}</span>
                 <span aria-hidden="true">/</span>
-                <span>tagged: (some tags)</span>
+                <span>
+                  tagged: <PostTags tags={tags} />
+                </span>
               </div>
               <div class="post-content">
                 <div dangerouslySetInnerHTML={{ __html: content }}></div>

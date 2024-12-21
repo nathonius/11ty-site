@@ -1,8 +1,7 @@
 import CalloutPlugin from "markdown-it-obsidian-callouts";
 import type MarkdownIt from "markdown-it";
-import { jsxToString } from "jsx-async-runtime";
 import { render } from "preact-render-to-string";
-import type { JavaScriptTemplate, TSXProps } from "./11ty";
+import type { TSXProps } from "./11ty";
 import { defineConfig } from "./11ty";
 import registerPlugins from "./config/plugins";
 
@@ -31,6 +30,8 @@ export default defineConfig(function (config) {
     jsTruthy: true,
     dateFormat: "%a, %b %d, %Y",
   });
+
+  config.addWatchTarget("**/*.tsx");
 
   return {
     markdownTemplateEngine: "liquid",
