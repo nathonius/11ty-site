@@ -894,7 +894,11 @@ export interface EleventyConfig extends Filters, ShortCodes, PluginExtend {
   addTemplateFormats(name: string): void;
   addExtension(
     name: string,
-    options?: { key?: TemplateEngines; outputFileExtension?: string }
+    options?: {
+      key?: TemplateEngines;
+      outputFileExtension?: string;
+      compile?: any;
+    }
   ): void;
   setLiquidOptions(options: any): void;
   /**

@@ -4,23 +4,24 @@ import { EleventyConfig } from "./11ty";
 
 export default function (eleventyConfig: EleventyConfig) {
   eleventyConfig.addExtension("11ty.tsx", {
-    key: "11ty.js",
+    compile: async (_, path: string) => {
+      const module = await import(path);
+      return async (props) => await jsxToString(module.render(props));
+    },
+    useJavaScriptImport: true,
+    outputFileExtension: "html",
   });
   eleventyConfig.addTemplateFormats("11ty.tsx");
-
-  eleventyConfig.addTransform("tsx", async (content: JSX.Element) => {
-    const result = await jsxToString(content);
-    return `<!doctype html>\n${result}`;
-  });
   eleventyConfig.addPlugin(InputPathToUrlTransformPlugin, {
-    extensions: "html",
+    extensions: "html,11ty.tsx",
   });
 
   return {
+    markdownTemplateEngine: "liquid",
+    htmlTemplateEngine: "liquid",
     dir: {
       input: "src",
       output: "public",
-      layouts: "_includes",
     },
   };
 }
