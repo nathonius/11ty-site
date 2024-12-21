@@ -1,6 +1,6 @@
 ---
 title: Projects
-layout: home.liquid
+layout: home.11ty.tsx
 summary: All the projects worked on by Nathan Smith.
 ---
 # Projects

@@ -1,4 +1,4 @@
 export default {
-  layout: "post.liquid",
+  layout: "post.11ty.tsx",
   tags: ["post"],
 };

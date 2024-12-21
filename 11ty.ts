@@ -47,6 +47,21 @@ export type EleventyPlugin = (eleventy: EleventyConfig, options?: any) => any;
  */
 type GetPluginOptions<T extends EleventyPlugin> = Parameters<T>[1];
 
+interface Collections {
+  all: object;
+  [key: string]: object;
+}
+
+export type TSXProps = EleventyScope & {
+  content: string;
+  collections: Collections;
+  [key: string]: any;
+};
+
+export interface JavaScriptTemplate {
+  render: (props: TSXProps) => JSX.Element;
+}
+
 interface PluginExtend {
   /**
    * Add an Eleventy Plugin.
@@ -208,7 +223,7 @@ interface EleventyData {
   };
 }
 
-interface EleventyScope {
+export interface EleventyScope {
   /**
    *
    * Information about the current page (see the code block below for page contents).
@@ -886,7 +901,12 @@ export interface EleventyConfig extends Filters, ShortCodes, PluginExtend {
   addTemplateFormats(name: string): void;
   addExtension(
     name: string,
-    options?: { key?: TemplateEngines; outputFileExtension?: string }
+    options?: {
+      key?: TemplateEngines;
+      outputFileExtension?: string;
+      useJavaScriptImport?: boolean;
+      compile?: (source: string, path: string) => any;
+    }
   ): void;
   setLiquidOptions(options: any): void;
   /**

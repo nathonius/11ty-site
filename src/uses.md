@@ -1,5 +1,5 @@
 ---
-layout: home.liquid
+layout: home.11ty.tsx
 title: Uses slash page
 summary: All the tools I use on a day-to-day basis
 ---

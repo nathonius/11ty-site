@@ -1,20 +1,20 @@
 ---
-layout: home.liquid
+layout: home.11ty.tsx
 title: Search nathan-smith.org
 ---
 {% block styles %}
-{{ block.super }}
-{% comment %} <link rel="stylesheet" href="/pagefind/pagefind-ui.css"> {% endcomment %}
-<link rel="stylesheet" href="/search.css">
+  {{ block.super }}
+  {% comment %} <link rel="stylesheet" href="/pagefind/pagefind-ui.css"> {% endcomment %}
+  <link rel="stylesheet" href="/search.css">
 {% endblock %}
 {% block prescripts %}
-{{ block.super }}
-<script src="/pagefind/pagefind-ui.js"></script>
+  {{ block.super }}
+  <script src="/pagefind/pagefind-ui.js"></script>
 {% endblock %}
 {% block postscripts %}
-{{ block.super }}
-<script>
-  window.addEventListener('DOMContentLoaded', (event) => {
+  {{ block.super }}
+  <script>
+      window.addEventListener('DOMContentLoaded', (event) => {
     new PagefindUI({
       element: '#pagefind-search',
       showSubResults: false,
@@ -22,12 +22,12 @@ title: Search nathan-smith.org
       translations: { placeholder: 'Search posts, pages, and projects' },
       autofocus: true,
     });
-  });
-</script>
+      });
+  </script>
 {% endblock %}
 {% block sitecontent %}
-<h1>Search</h1>
-<div class="search-wrapper">
-  <div id="pagefind-search"></div>
-</div>
+  <h1>Search</h1>
+  <div class="search-wrapper">
+    <div id="pagefind-search"></div>
+  </div>
 {% endblock %}

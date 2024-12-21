@@ -1,6 +1,6 @@
 ---
 title: Today I Learned
-layout: home.liquid
+layout: home.11ty.tsx
 summary: Code snippets, small learnings, and any other quick thoughts I want to share.
 aliases:
   - /bits/
