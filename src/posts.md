@@ -1,6 +1,6 @@
 ---
 title: Posts
-layout: home.liquid
+layout: home.11ty.tsx
 summary: Thoughts on tech, life, and anything else.
 ---
 

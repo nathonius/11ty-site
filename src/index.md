@@ -1,6 +1,6 @@
 ---
 title: Home
-layout: home.liquid
+layout: home.11ty.tsx
 summary: Homepage of Nathan Smith, full-time and hobby open source software developer.
 ---
 

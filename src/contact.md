@@ -1,6 +1,6 @@
 ---
 title: Contact
-layout: home.liquid
+layout: home.11ty.tsx
 summary: How to get in touch with Nathan Smith.
 aliases:
   - /where/

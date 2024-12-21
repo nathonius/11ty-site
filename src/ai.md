@@ -1,5 +1,5 @@
 ---
-layout: home.liquid
+layout: home.11ty.tsx
 title: AI usage
 summary: How I use (and don't use) AI
 ---

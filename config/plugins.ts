@@ -23,9 +23,15 @@ const plugins = [
   { plugin: registerShortcodes },
   { plugin: navigation },
   { plugin: IdAttributePlugin },
-  { plugin: InputPathToUrlTransformPlugin, options: { extensions: "html" } },
+  {
+    plugin: InputPathToUrlTransformPlugin,
+    options: { extensions: "html,11ty.tsx" },
+  },
   { plugin: output },
-  { plugin: eleventyImageTransformPlugin, options: { extensions: "html" } },
+  {
+    plugin: eleventyImageTransformPlugin,
+    options: { extensions: "html,11ty.tsx" },
+  },
   { plugin: syntaxHighlight },
   { plugin: minifyHtml },
   { plugin: registerCss },

@@ -1,5 +1,5 @@
 ---
-layout: home.liquid
+layout: home.11ty.tsx
 title: Slash pages
 summary: Directory of all my slash pages
 ---

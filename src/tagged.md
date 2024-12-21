@@ -4,7 +4,7 @@ pagination:
   size: 1
   alias: tag
 permalink: /tagged/{{ tag }}/
-layout: home.liquid
+layout: home.11ty.tsx
 eleventyComputed:
   title: Posts tagged {{tag}}
 ---
