@@ -1,12 +1,16 @@
+import { Emoji } from "./emoji";
+import { Icon } from "./icon";
+
 export function Header(props: { url: string }): JSX.Element {
   const { url } = props;
-  let classname = "header-link";
   const activeRoute = (
     value: string,
     baseRoute: string,
     desktopOnly = false,
     phoneOnly = false
   ) => {
+    let classname = "header-link";
+
     if (
       (baseRoute === "/" && value.length < 2) ||
       (baseRoute !== "/" && value.startsWith(baseRoute))
@@ -55,10 +59,10 @@ export function Header(props: { url: string }): JSX.Element {
           <a
             id="search-icon"
             href="search.liquid"
-            class={"icon-button " + activeRoute(url, "/search", false, true)}
+            class={"icon-button" + activeRoute(url, "/search", false, true)}
           >
             <span class="sr-only">Search</span>
-            {/* {% icon "search" %} */}
+            <Icon name="search" />
           </a>
           <button
             id="theme-toggle"
@@ -67,11 +71,10 @@ export function Header(props: { url: string }): JSX.Element {
             aria-label="Toggle theme"
           >
             <span id="theme-name" class="hint--bottom" data-hint="mocha-theme">
-              🌿
-              {/* {{ '🌿' | emoji: 'mocha theme' }} */}
-              {/* {{ '🌺' | emoji: 'macchiato theme' }} */}
-              {/* {{ '🪴' | emoji: 'frappe theme' }} */}
-              {/* {{ '🌻' | emoji: 'latte theme' }} */}
+              <Emoji value="🌿" label="mocha theme" />
+              <Emoji value="🌺" label="macchiato theme" />
+              <Emoji value="🪴" label="frappe theme" />
+              <Emoji value="🌻" label="latte theme" />
             </span>
           </button>
         </div>
