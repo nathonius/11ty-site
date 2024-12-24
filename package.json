@@ -15,7 +15,6 @@
   "description": "",
   "devDependencies": {
     "@eslint/js": "^9.8.0",
-    "@types/html-minifier": "^4.0.5",
     "@types/markdown-it": "^14.1.2",
     "@types/node": "^20.14.10",
     "@types/through2": "^2.0.41",
@@ -41,16 +40,12 @@
     "eleventy-plugin-emoji": "^1.1.0",
     "eleventy-plugin-icons": "^4.5.1",
     "eleventy-plugin-redirects": "^1.0.0",
-    "html-minifier": "^4.0.0",
     "jsx-async-runtime": "^0.6.2",
-    "lightningcss": "^1.25.1",
     "lucide-static": "^0.417.0",
     "markdown-it-obsidian-callouts": "^0.2.6",
     "pagefind": "^1.1.0",
     "preact": "^10.25.3",
-    "preact-render-to-string": "^6.5.12",
-    "through2": "^4.0.2",
-    "uglify-js": "^3.19.0"
+    "preact-render-to-string": "^6.5.12"
   },
   "overrides": {
     "eslint-plugin-import": {

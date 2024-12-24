@@ -14,7 +14,6 @@ import { registerFilters } from "./filters.js";
 import { registerShortcodes } from "./shortcodes.js";
 import { feed } from "./feed.js";
 import { registerCss } from "./css.js";
-import { minifyHtml } from "./html.js";
 import { registerJsModules } from "./modules.js";
 import { icons } from "./icons.js";
 
@@ -33,7 +32,6 @@ const plugins = [
     options: { extensions: "html,11ty.tsx" },
   },
   { plugin: syntaxHighlight },
-  { plugin: minifyHtml },
   { plugin: registerCss },
   { plugin: registerJsModules },
   { plugin: drafts },
