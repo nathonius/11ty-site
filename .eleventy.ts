@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import CalloutPlugin from "markdown-it-obsidian-callouts";
 import type MarkdownIt from "markdown-it";
 import { render } from "preact-render-to-string";
@@ -18,7 +17,7 @@ export default defineConfig(function (config) {
     compile: function (component: FunctionComponent<TSXProps>) {
       return (props: TSXProps) => {
         const result = render(component(props) as VNode);
-        return result;
+        return `<!doctype html>\n${result}`;
       };
     },
     useJavaScriptImport: true,
