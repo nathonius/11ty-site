@@ -5,6 +5,7 @@ import tseslint from "typescript-eslint";
 import UnusedImportsPlugin from "eslint-plugin-unused-imports";
 import PrettierConfig from "eslint-config-prettier";
 import * as ImportPlugin from "eslint-plugin-import";
+import globals from "globals";
 
 export default tseslint.config(
   {
@@ -15,6 +16,9 @@ export default tseslint.config(
   ...tseslint.configs.recommendedTypeChecked,
   {
     languageOptions: {
+      globals: {
+        ...globals.browser,
+      },
       parserOptions: {
         project: true,
         tsconfigRootDir: import.meta.dirname,
@@ -26,9 +30,11 @@ export default tseslint.config(
     },
     rules: {
       "@typescript-eslint/restrict-template-expressions": "warn",
-      "@typescript-eslint/no-unsafe-assignment": "warn",
+      "@typescript-eslint/no-unsafe-assignment": "off",
       "@typescript-eslint/no-unsafe-argument": "warn",
-      "@typescript-eslint/no-unsafe-member-access": "warn",
+      "@typescript-eslint/no-unsafe-member-access": "off",
+      "@typescript-eslint/no-unsafe-call": "off",
+      "@typescript-eslint/no-explicit-any": "warn",
       "@typescript-eslint/no-redundant-type-constituents": "warn",
       "@typescript-eslint/unbound-method": "off",
       "@typescript-eslint/no-this-alias": "warn",

@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-redundant-type-constituents */
+/* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // Original source: https://github.com/panoply/e11ty/blob/master/plugins/11ty.ts/index.ts
 
@@ -57,10 +59,6 @@ export type TSXProps = EleventyScope & {
   collections: Collections;
   [key: string]: any;
 };
-
-export interface JavaScriptTemplate {
-  render: (props: TSXProps) => JSX.Element;
-}
 
 interface PluginExtend {
   /**
@@ -905,7 +903,10 @@ export interface EleventyConfig extends Filters, ShortCodes, PluginExtend {
       key?: TemplateEngines;
       outputFileExtension?: string;
       useJavaScriptImport?: boolean;
-      compile?: (source: string, path: string) => any;
+      compile?:
+        | ((instance?: any) => any)
+        | ((source: string, path: string) => any);
+      getInstanceFromInputPath?: (inputPath: string) => any;
     }
   ): void;
   setLiquidOptions(options: any): void;
