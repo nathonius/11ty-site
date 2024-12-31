@@ -9,5 +9,4 @@ date: 2022-09-15
 has-own-page: false
 project-status: Maintenance
 title: Go to Combatant
-draft: true
 ---

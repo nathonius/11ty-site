@@ -9,5 +9,4 @@ date: 2021-10-31
 has-own-page: false
 project-status: Maintenance
 title: Auto Class
-draft: true
 ---

@@ -8,5 +8,4 @@ date: 2018-06-07
 has-own-page: false
 project-status: Maintenance
 title: Alloy
-draft: true
 ---

@@ -9,5 +9,4 @@ date: 2022-03-13
 has-own-page: false
 project-status: Archived
 title: Cryptomancer FVTT
-draft: true
 ---

@@ -9,5 +9,4 @@ date: 2024-11-24
 has-own-page: false
 project-status: Active
 title: Phobos Launcher
-draft: true
 ---
