@@ -917,7 +917,19 @@ export interface EleventyConfig extends Filters, ShortCodes, PluginExtend {
    *
    * [11ty Docs](https://www.11ty.dev/docs/events/)
    */
-  on(event: EventNames, handler: () => void): void;
+  on(
+    event: Omit<EventNames, "eleventy.after" | "eleventy.before">,
+    handler: () => void
+  ): void;
+  on(
+    event: "eleventy.after",
+    handler: (config: AfterEventConfig) => void | Promise<void>
+  ): void;
+  on(
+    event: "eleventy.before",
+    handler: (config: BeforeEventConfig) => void | Promise<void>
+  ): void;
+
   /**
    * Deprecated Event Name, Use the new Event names:
    *
@@ -930,6 +942,29 @@ export interface EleventyConfig extends Filters, ShortCodes, PluginExtend {
    * @deprecated
    */
   on(event: EventNamesDeprecated, handler: () => void): void;
+}
+
+interface BeforeEventConfig {
+  directories: {
+    input: string;
+    output: string;
+    data: string;
+    includes: string;
+    inputFile?: string;
+    inputGlob?: string;
+    layouts?: string;
+  };
+  outputMode: "fs" | "json" | "ndjson";
+  runMode: "build" | "watch" | "serve";
+}
+
+interface AfterEventConfig extends BeforeEventConfig {
+  results: {
+    inputPath: string;
+    outputPath: string;
+    url: string;
+    content: string;
+  }[];
 }
 
 interface ReturnConfig {
